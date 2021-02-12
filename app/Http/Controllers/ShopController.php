@@ -22,7 +22,7 @@ class ShopController extends Controller
         $query = Shop::query();
 
         if( $request->filled('category_id')){
-            $shops = $query->where('category_id', $category_id)->get()->sortByDesc('created_at');
+            $shops = $query->where('category_id', $category_id)->orderBy('created_at','asc')->paginate(9);
 
         }elseif($request->filled('keyword')){
             $keyword = '%' . $this->escape($request->input('keyword')) . '%';
@@ -30,10 +30,10 @@ class ShopController extends Controller
                 $query->where('name','LIKE',$keyword);
                 $query->orWhere('explanation','LIKE',$keyword);
             })
-            ->get();
+            ->paginate(9);
 
         }else{
-            $shops = Shop::all()->sortByDesc('created_at');
+            $shops = Shop::orderBy('created_at','asc')->paginate(9);
         }
         return view('shops.index',['shops'=>$shops,'categories'=>$categories,'category_id'=>$category_id]);
     }

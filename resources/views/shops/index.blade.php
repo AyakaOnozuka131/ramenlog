@@ -50,6 +50,7 @@
           @endforeach
         </ul>
 
+        {{ $shops->links() }}
         
       </div>
 
