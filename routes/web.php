@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Auth::routes();
 
 // top
@@ -29,7 +31,7 @@ Route::prefix('shops')->name('shops.')->group(function(){
 });
 
 // review
-
+Route::resource('/review', 'ReviewController')->except(['index', 'show'])->middleware('auth');
 
 // categories
 Route::get('/categories', 'CategoryController@index');
