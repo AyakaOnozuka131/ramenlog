@@ -49,4 +49,15 @@ class Shop extends Model
         return $this->belongsToMany('App\Category')->withTimestamps();
     }
 
+    public function reviews() {
+        return $this->hasMany('App\Review');
+    }
+
+    public function getShopLists()
+    {
+        $shopLists = Shop::orderBy('id','asc')->pluck('name', 'id');
+     
+        return $shopLists;
+    }
+
 }

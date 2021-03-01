@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Shop;
 use App\Category;
 
-use App\Http\Requests\ArticleRequest;
 use App\Http\Requests\ShopRequest;
 use Illuminate\Http\Request;
 
@@ -88,7 +87,7 @@ class ShopController extends Controller
         $categories = $request->category_id;
         $shop->categories()->attach($categories);
         $shop->save();
-        return redirect()->route('shops.index');
+        return redirect()->route('v');
     }
 
      /**

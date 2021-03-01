@@ -13,14 +13,17 @@
     <div class="l-profile">
       <div class="l-profileContent">
 
-        <form class="page-regist">
-          <ul class="page-regist__block" action="{{ route('review.store') }}" method="post" enctype="multipart/form-data">
+        <form class="page-regist" action="{{ route('review.store') }}" method="post" enctype="multipart/form-data">
+          @csrf
+          
+          <ul class="page-regist__block">
             <li class="page-regist__item">
               <p class="page-regist__text">お店を選択</p>
               <div class="c-selectBox">
-                <select name="お店" id="" class="">
-                  <option value="">選択してください</option>
-                  <option value="">ダミーダミーダミーダミーダミーダミーダミー</option>
+                <select name="shop_select" id="">
+                  @foreach($shops as $id=> $name)
+                    <option value="{{ $id }}">{{ $name }}</option>
+                  @endforeach
                 </select>
               </div>
             </li>
@@ -28,12 +31,9 @@
               <p class="page-regist__text">評価</p>
               <div class="c-selectBox">
                 <select name="score">
-                  <option value="">選択してください</option>
-                  <option value="1">★★★★★　1.0</option>
-                  <option value="2">★★★★★　2.0</option>
-                  <option value="3">★★★★★　3.0</option>
-                  <option value="4">★★★★★　4.0</option>
-                  <option value="5">★★★★★　5.0</option>
+                  @foreach(config('score') as $key => $score)
+                    <option value="{{ $key }}">{{ $score }}</option>
+                  @endforeach
                 </select>
               </div>
             </li>
@@ -52,26 +52,6 @@
                   <label>
                     <div class="c-img__areaDrop">
                     <input type="file" name="image_path1" class="c-img__inputFile">
-                    <img src="" alt="" class="c-img__prevImg">
-                    ドラッグ＆ドロップ<br>または<br>クリック
-                    </div>
-                  </label>
-                </div>
-                <div class="page-regist__item__rowBlock">
-                  <p class="page-regist__text">画像2</p>
-                  <label>
-                    <div class="c-img__areaDrop">
-                    <input type="file" name="image_path2" class="c-img__inputFile">
-                    <img src="" alt="" class="c-img__prevImg">
-                    ドラッグ＆ドロップ<br>または<br>クリック
-                    </div>
-                  </label>
-                </div>
-                <div class="page-regist__item__rowBlock">
-                  <p class="page-regist__text">画像3</p>
-                  <label>
-                    <div class="c-img__areaDrop">
-                    <input type="file" name="image_path3" class="c-img__inputFile">
                     <img src="" alt="" class="c-img__prevImg">
                     ドラッグ＆ドロップ<br>または<br>クリック
                     </div>
