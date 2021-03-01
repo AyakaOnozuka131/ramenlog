@@ -57,6 +57,26 @@
                     </div>
                   </label>
                 </div>
+                <div class="page-regist__item__rowBlock">
+                  <p class="page-regist__text">画像1</p>
+                  <label>
+                    <div class="c-img__areaDrop">
+                    <input type="file" name="image_path2" class="c-img__inputFile">
+                    <img src="" alt="" class="c-img__prevImg">
+                    ドラッグ＆ドロップ<br>または<br>クリック
+                    </div>
+                  </label>
+                </div>
+                <div class="page-regist__item__rowBlock">
+                  <p class="page-regist__text">画像1</p>
+                  <label>
+                    <div class="c-img__areaDrop">
+                    <input type="file" name="image_path3" class="c-img__inputFile">
+                    <img src="" alt="" class="c-img__prevImg">
+                    ドラッグ＆ドロップ<br>または<br>クリック
+                    </div>
+                  </label>
+                </div>
               </div>
             </li>
           </ul>
