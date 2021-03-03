@@ -37,3 +37,8 @@ Route::resource('/review', 'ReviewController')->except(['index', 'show'])->middl
 Route::get('/categories', 'CategoryController@index');
 Route::get('/categories/{name}', 'CategoryController@show')->name('categories.show');
 
+// users
+Route::prefix('users')->name('users.')->group(function(){
+  Route::get('/mypage','UserController@show')->name('show')->middleware('auth');
+});
+
