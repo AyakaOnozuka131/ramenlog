@@ -101,7 +101,7 @@
                     <div class="c-img__areaDrop">
                       <input type="file" name="image_path1" class="c-img__inputFile">
                       @if (!empty($shop->image_path1))
-                      <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="" class="c-img__prevImg">
+                      <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image" class="c-img__prevImg">
                       ドラッグ＆ドロップ<br>または<br>クリック
                       @endif
                     </div>
