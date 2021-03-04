@@ -27,7 +27,7 @@
             <div class="l-cardWrap">
               @foreach($reviews as $review)
               <article class="c-card">
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
+                <a href="{{ route('reviews.edit',['review'=>$review]) }}" class="c-card__link">
                   <div class="l-card__imgWrap">
                     <div class="c-card__img">
                       <img src="https://placehold.jp/320x226.png" alt="">
@@ -36,153 +36,39 @@
                   <div class="c-card__content">
                     <h3 class="c-card__title">{{ $review->title }}</h3>
                     <p class="c-card__text">{{ $review->contents }}</p>
-                    <div class="c-card__catWrap">
-                      <p class="c-card__cat">醤油ラーメン</p>
-                      <p class="c-card__cat">醤油ラーメン</p>
-                    </div>
                   </div>
                 </a>
               </article>
               @endforeach
-              <article class="c-card">
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-                  <div class="l-card__imgWrap">
-                    <div class="c-card__img">
-                      <img src="https://placehold.jp/320x226.png" alt="">
-                    </div>
-                  </div>
-                  <div class="c-card__content">
-                    <p class="c-card__area">高崎市</p>
-                    <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                    <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                    <div class="c-card__catWrap">
-                      <p class="c-card__cat">醤油ラーメン</p>
-                      <p class="c-card__cat">醤油ラーメン</p>
-                    </div>
-                  </div>
-                </a>
-              </article>
-              <article class="c-card">
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-                  <div class="l-card__imgWrap">
-                    <div class="c-card__img">
-                      <img src="https://placehold.jp/320x226.png" alt="">
-                    </div>
-                  </div>
-                  <div class="c-card__content">
-                    <p class="c-card__area">高崎市</p>
-                    <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                    <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                    <div class="c-card__catWrap">
-                      <p class="c-card__cat">醤油ラーメン</p>
-                      <p class="c-card__cat">醤油ラーメン</p>
-                    </div>
-                  </div>
-                </a>
-              </article>
-              <article class="c-card">
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-                  <div class="l-card__imgWrap">
-                    <div class="c-card__img">
-                      <img src="https://placehold.jp/320x226.png" alt="">
-                    </div>
-                  </div>
-                  <div class="c-card__content">
-                    <p class="c-card__area">高崎市</p>
-                    <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                    <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                    <div class="c-card__catWrap">
-                      <p class="c-card__cat">醤油ラーメン</p>
-                      <p class="c-card__cat">醤油ラーメン</p>
-                    </div>
-                  </div>
-                </a>
-              </article>
-            </div>
-            <div class="p-profileArchive__btn">
-              <a href="" class="c-primary__btn">一覧を見る</a>
-            </div>
-  
           </div>
           
           <div class="c-profileArchive">
             <div class="c-secondary__heading">お気に入りのお店</div>
             <div class="l-cardWrap">
+              @foreach($shops as $shop)
               <article class="c-card">
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
+                <a href="{{ route('shops.show',['shop'=>$shop]) }}" class="c-card__link">
                   <div class="l-card__imgWrap">
                     <div class="c-card__img">
                       <img src="https://placehold.jp/320x226.png" alt="">
                     </div>
                   </div>
                   <div class="c-card__content">
-                    <p class="c-card__area">高崎市</p>
-                    <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                    <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
+                    <h3 class="c-card__title">{{ $shop->name }}</h3>
+                    <p class="c-card__text">{{ $shop->explanation }}</p>
                     <div class="c-card__catWrap">
-                      <p class="c-card__cat">醤油ラーメン</p>
-                      <p class="c-card__cat">醤油ラーメン</p>
+                      <p class="c-card__cat">
+                        @foreach($categories as $id => $name)
+                          @if($shop->category_id == $id)
+                          {{ $name }}
+                          @endif
+                        @endforeach
+                      </p>
                     </div>
                   </div>
                 </a>
               </article>
-              <article class="c-card">
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-                  <div class="l-card__imgWrap">
-                    <div class="c-card__img">
-                      <img src="https://placehold.jp/320x226.png" alt="">
-                    </div>
-                  </div>
-                  <div class="c-card__content">
-                    <p class="c-card__area">高崎市</p>
-                    <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                    <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                    <div class="c-card__catWrap">
-                      <p class="c-card__cat">醤油ラーメン</p>
-                      <p class="c-card__cat">醤油ラーメン</p>
-                    </div>
-                  </div>
-                </a>
-              </article>
-              <article class="c-card">
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-                  <div class="l-card__imgWrap">
-                    <div class="c-card__img">
-                      <img src="https://placehold.jp/320x226.png" alt="">
-                    </div>
-                  </div>
-                  <div class="c-card__content">
-                    <p class="c-card__area">高崎市</p>
-                    <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                    <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                    <div class="c-card__catWrap">
-                      <p class="c-card__cat">醤油ラーメン</p>
-                      <p class="c-card__cat">醤油ラーメン</p>
-                    </div>
-                  </div>
-                </a>
-              </article>
-              <article class="c-card">
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-                  <div class="l-card__imgWrap">
-                    <div class="c-card__img">
-                      <img src="https://placehold.jp/320x226.png" alt="">
-                    </div>
-                  </div>
-                  <div class="c-card__content">
-                    <p class="c-card__area">高崎市</p>
-                    <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                    <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                    <div class="c-card__catWrap">
-                      <p class="c-card__cat">醤油ラーメン</p>
-                      <p class="c-card__cat">醤油ラーメン</p>
-                    </div>
-                  </div>
-                </a>
-              </article>
-            </div>
-            <div class="p-profileArchive__btn">
-              <a href="" class="c-primary__btn">一覧を見る</a>
+              @endforeach
             </div>
           </div>
         </div>
@@ -228,7 +114,6 @@
       </div>
 
     </div>
-
 
   </main>
 

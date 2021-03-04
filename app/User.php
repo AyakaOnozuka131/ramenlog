@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -51,5 +52,10 @@ class User extends Authenticatable
     public function reviews():HasMany
     {
         return $this->hasmany('App\Review');
+    }
+
+    public function likes():BelongsToMany
+    {
+        return $this->belongsToMany('App\Shop','likes')->withTimestamps();
     }
 }

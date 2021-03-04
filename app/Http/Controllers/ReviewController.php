@@ -52,30 +52,38 @@ class ReviewController extends Controller
     }
 
     /**
-      * 画像をリサイズして保存します
-      *
-      * @param UploadedFile $file アップロードされたアバター画像
-      * @return string ファイル名
-      */
+     * 画像をリサイズして保存します
+    *
+    * @param UploadedFile $file アップロードされたアバター画像
+    * @return string ファイル名
+    */
 
-      private function saveImg(UploadedFile $file): string
-      {
-          $tempPath = $this->makeTempPath();
-          Image::make($file)->fit(200, 200)->save($tempPath);
-          $filePath = Storage::disk('public')->putFile('reviewImages', new File($tempPath));
-          return basename($filePath);
-      }
+    private function saveImg(UploadedFile $file): string
+    {
+        $tempPath = $this->makeTempPath();
+        Image::make($file)->fit(200, 200)->save($tempPath);
+        $filePath = Storage::disk('public')->putFile('reviewImages', new File($tempPath));
+        return basename($filePath);
+    }
   
-      /**
-       * 一時的なファイルを生成してパスを返します。
-      *
-      * @return string ファイルパス
-      */
-  
-      private function makeTempPath(): string
-       {
-          $tmp_fp = tmpfile();
-          $meta   = stream_get_meta_data($tmp_fp);
-          return $meta["uri"];
-       }
+    /**
+     * 一時的なファイルを生成してパスを返します。
+     *
+    * @return string ファイルパス
+    */
+
+    private function makeTempPath(): string
+    {
+        $tmp_fp = tmpfile();
+        $meta   = stream_get_meta_data($tmp_fp);
+        return $meta["uri"];
+    }
+
+    public function edit(Review $review, Shop $shop)
+    {
+        $shops = $shop->getShopLists();
+
+        return view('review.edit',['review'=>$review, 'shops'=>$shops]);
+    }
+
 }
