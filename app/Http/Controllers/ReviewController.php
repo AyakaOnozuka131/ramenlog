@@ -86,4 +86,25 @@ class ReviewController extends Controller
         return view('review.edit',['review'=>$review, 'shops'=>$shops]);
     }
 
+    public function update(ReviewRequest $request, Review $review)
+    {
+        $file1 = $request->file('image_path1');
+        $file2 = $request->file('image_path2');
+        $file3 = $request->file('image_path3');
+
+        if( !is_null( $file1 ) ){
+            $fileName1 = $this->saveAvatar($request->file('image_path1'));
+            $review->image_path1 = $fileName1;
+        }elseif( !is_null( $file2 ) ){
+            $fileNam2 = $this->saveAvatar($request->file('image_path2'));
+            $review->image_path2 = $fileNam2;
+        }elseif( !is_null( $file3 ) ){
+            $fileNam3 = $this->saveAvatar($request->file('image_path3'));
+            $review->image_path3 = $fileNam3;
+        }
+        $review->fill($request->all());
+        $review->save();
+        return redirect()->route('users.show');
+    }
+
 }

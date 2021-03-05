@@ -87,7 +87,7 @@ class ShopController extends Controller
         $categories = $request->category_id;
         $shop->categories()->attach($categories);
         $shop->save();
-        return redirect()->route('v');
+        return redirect()->route('shops.index');
     }
 
      /**

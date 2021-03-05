@@ -27,7 +27,7 @@
             <div class="l-cardWrap">
               @foreach($reviews as $review)
               <article class="c-card">
-                <a href="{{ route('reviews.edit',['review'=>$review]) }}" class="c-card__link">
+                <a href="{{ route('review.edit',['review'=>$review]) }}" class="c-card__link">
                   <div class="l-card__imgWrap">
                     <div class="c-card__img">
                       <img src="https://placehold.jp/320x226.png" alt="">
