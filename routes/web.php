@@ -11,7 +11,7 @@
 |
 */
 
-Auth::routes();
+Auth::routes(); 
 
 // top
 Route::get('/', 'topController@index');
@@ -39,5 +39,6 @@ Route::get('/categories/{name}', 'CategoryController@show')->name('categories.sh
 // users
 Route::prefix('users')->name('users.')->group(function(){
   Route::get('/mypage','UserController@show')->name('show')->middleware('auth');
+  // Route::get('/mypage/edit','UserController@edit')->name('edit')->middleware('auth');
 });
 

@@ -41,6 +41,38 @@
               </article>
               @endforeach
           </div>
+
+          <div class="c-profileArchive">
+            <div class="c-secondary__heading">登録したお店</div>
+            <div class="l-cardWrap">
+              @foreach($registShops as $registShop)
+                <article class="c-card">
+                  <a href="{{ route('shops.show',['shop'=>$registShop]) }}" class="c-card__link">
+                    <div class="l-card__imgWrap">
+                      <div class="c-card__img">
+                        @if (!empty($registShop->image_path1))
+                        <img src="/storage/shopImages/{{ $registShop->image_path1 }}" alt="image">
+                        @endif
+                      </div>
+                    </div>
+                    <div class="c-card__content">
+                      <h3 class="c-card__title">{{ $registShop->name }}</h3>
+                      <p class="c-card__text">{{ $registShop->explanation }}</p>
+                      <div class="c-card__catWrap">
+                        <p class="c-card__cat">
+                          @foreach($categories as $id => $name)
+                            @if($registShop->category_id == $id)
+                            {{ $name }}
+                            @endif
+                          @endforeach
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+                @endforeach
+            </div>
+          </div>
           
           <div class="c-profileArchive">
             <div class="c-secondary__heading">お気に入りのお店</div>
@@ -50,7 +82,9 @@
                 <a href="{{ route('shops.show',['shop'=>$shop]) }}" class="c-card__link">
                   <div class="l-card__imgWrap">
                     <div class="c-card__img">
-                      <img src="https://placehold.jp/320x226.png" alt="">
+                      @if (!empty($shop->image_path1))
+                      <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image">
+                      @endif
                     </div>
                   </div>
                   <div class="c-card__content">
@@ -81,6 +115,14 @@
                 <a href="" class="p-sideItem--profile__link">
                   <span class="material-icons">message</span>
                   口コミを投稿する
+                </a>
+              </div>
+            </li>
+            <li class="p-sideItem p-sideItem--profile">
+              <div class="p-sideItem--profile__box">
+                <a href="" class="p-sideItem--profile__link">
+                  <span class="material-icons">store</span>
+                  ラーメン屋を登録する
                 </a>
               </div>
             </li>

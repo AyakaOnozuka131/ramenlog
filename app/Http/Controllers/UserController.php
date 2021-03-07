@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Shop;
 use App\Category;
 
 use Illuminate\Support\Facades\Auth;
@@ -17,9 +18,10 @@ class UserController extends Controller
         $user = User::where('name', $username)->first();
         $reviews = $user->reviews->sortByDesc('created_at');
         $shops = $user->likes->sortByDesc('created_at');
+        $registShops = $user->shops->sortByDesc('created_at');
         $categories = $category->getLists();
 
-        return view('users.show',['user'=>$user, 'reviews'=>$reviews, 'shops'=>$shops, 'categories'=>$categories]);
+        return view('users.show',['user'=>$user, 'reviews'=>$reviews, 'registShops'=>$registShops, 'shops'=>$shops, 'categories'=>$categories]);
     }
 
 }
