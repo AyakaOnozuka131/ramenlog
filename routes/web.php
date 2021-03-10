@@ -37,8 +37,9 @@ Route::get('/categories', 'CategoryController@index');
 Route::get('/categories/{name}', 'CategoryController@show')->name('categories.show');
 
 // users
-Route::prefix('users')->name('users.')->group(function(){
-  Route::get('/mypage','UserController@show')->name('show')->middleware('auth');
-  // Route::get('/mypage/edit','UserController@edit')->name('edit')->middleware('auth');
+Route::prefix('users')->name('users.')->middleware('auth')->group(function(){
+  Route::get('/mypage','UserController@show')->name('show');
+  Route::get('/mypage/edit','UserController@edit')->name('edit');
+  Route::post('/mypage/update','UserController@update')->name('update ');
 });
 

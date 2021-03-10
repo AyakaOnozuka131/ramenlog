@@ -32,4 +32,15 @@ class UserController extends Controller
         return redirect()->route('users.show');
     }
 
+    public function edit()
+    {
+        $user = Auth::user();
+        return view('users.edit',['user'=>$user]);
+    }
+
+    public function update()
+    {
+        return view();
+    }
+
 }
