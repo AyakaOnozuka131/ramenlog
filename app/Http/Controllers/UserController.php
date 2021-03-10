@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Shop;
 use App\Category;
+use App\Review;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -22,6 +23,13 @@ class UserController extends Controller
         $categories = $category->getLists();
 
         return view('users.show',['user'=>$user, 'reviews'=>$reviews, 'registShops'=>$registShops, 'shops'=>$shops, 'categories'=>$categories]);
+    }
+
+    public function destroy(Shop $shop, Review $review)
+    {
+        $shop->delete();
+        $review->delete();
+        return redirect()->route('users.show');
     }
 
 }

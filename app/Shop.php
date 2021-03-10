@@ -44,7 +44,7 @@ class Shop extends Model
             ? (bool)$this->likes->where('id', $user->id) : false;
     }
 
-    public function categories()
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany('App\Category')->withTimestamps();
     }

@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title','店舗情報詳細｜ラーメンログ｜群馬のラーメン口コミ検索サイト')
+@section('title',$shop->name.'の店舗詳細情報｜ラーメンログ｜群馬のラーメン口コミ検索サイト')
 
 @section('content')
 
@@ -11,7 +11,11 @@
       <div class="p-shop__head">
         <div class="l-content-sm">
           <div class="p-shop__headInner">
-            <div class="p-shop__head__img"><img src="https://placehold.jp/300x300.png" alt=""></div>
+            <div class="p-shop__head__img">
+              @if (!empty($shop->image_path1))
+              <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image">
+              @endif
+            </div>
             <div class="p-shop__head__content">
               <div class="p-shop__head__contentHead">
                 <h2 class="c-shop__head__heading">
@@ -51,7 +55,7 @@
                 <tr>
                 <th class="c-table__head">お店の説明</th>
                   <td class="c-table__content">
-                    {{ $shop->address }}
+                    {{ $shop->explanation }}
                   </td>
                 </tr>
                 <tr>
@@ -66,6 +70,66 @@
                     {{ $shop->tel }} 
                   </td>
                 </tr>
+                <tr>
+                  <th class="c-table__head">定休日</th>
+                  <td class="c-table__content">
+                    {{ $shop->holiday }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">席数</th>
+                  <td class="c-table__content">
+                    {{ $shop->seats }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">交通手段</th>
+                  <td class="c-table__content">
+                    {{ $shop->traffic }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">営業時間</th>
+                  <td class="c-table__content">
+                    {{ $shop->business_hours }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">駐車場情報</th>
+                  <td class="c-table__content">
+                    {{ $shop->parking }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">駐車場 GOOGLE MAP</th>
+                  <td class="c-table__content">
+                    {{ $shop->parking_map }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">駐車場（周辺）</th>
+                  <td class="c-table__content">
+                    {{ $shop->parking2 }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">駐車場（周辺） GOOGLE MAP</th>
+                  <td class="c-table__content">
+                    {{ $shop->parking_map2 }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">設備</th>
+                  <td class="c-table__content">
+                    {{ $shop->facility }} 
+                  </td>
+                </tr>
+                <tr>
+                  <th class="c-table__head">その他・備考</th>
+                  <td class="c-table__content">
+                    {{ $shop->other }} 
+                  </td>
+                </tr>
               </tr>
               </table>
             </div>
@@ -73,7 +137,9 @@
           <div class="p-shop__tabInner p-shop__tabInner--review">
             <div class="c-review">
               <div class="c-review__head">
-                <div class="c-review__userIcon"><img src="https://placehold.jp/300x300.png" alt="アイコン"></div>
+                <div class="c-review__userIcon">
+                  <img src="https://placehold.jp/300x300.png" alt="アイコン">
+                </div>
                 <div class="c-review__head__content">
                   <p class="c-review__userName">〇〇さん</p>
                   <div class="c-review__score">

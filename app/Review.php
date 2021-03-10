@@ -22,4 +22,9 @@ class Review extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function shops(): BelongsTo
+    {
+        return $this->belongsTo('App\Shop');
+    }
 }

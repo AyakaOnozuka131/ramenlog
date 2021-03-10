@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Shop;
 use App\Category;
+use App\Review;
 
 use App\Http\Requests\ShopRequest;
 use Illuminate\Http\Request;
@@ -126,7 +128,11 @@ class ShopController extends Controller
 
     public function show(Shop $shop)
     {
-        return view('shops.show',['shop'=>$shop]);
+        $shop_id = $shop->id;
+        $reviews = Review::where('shop_select',$shop_id)->get();
+        $user = $reviews->pluck('user_id')->first();
+
+        return view('shops.show',['shop'=>$shop, 'reviews'=>$reviews, 'user'=>$user]);
     }
 
     public function like(Request $request , Shop $shop)
