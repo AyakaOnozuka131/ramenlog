@@ -40,6 +40,6 @@ Route::get('/categories/{name}', 'CategoryController@show')->name('categories.sh
 Route::prefix('users')->name('users.')->middleware('auth')->group(function(){
   Route::get('/mypage','UserController@show')->name('show');
   Route::get('/mypage/edit','UserController@edit')->name('edit');
-  Route::post('/mypage/update','UserController@update')->name('update ');
+  Route::patch('/mypage/update','UserController@update')->name('update');
 });
 

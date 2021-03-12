@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         return [
             'avatar' => 'file|mimes:jpeg,bmp,png|max:2048',
             'name' => 'required|string|max:50',
-            'email' => 'required|string|email|max:255|unique:users'
+            'email' => 'required|string|email|max:255'
         ];
     }
 }

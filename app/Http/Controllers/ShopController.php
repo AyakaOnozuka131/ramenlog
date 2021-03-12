@@ -93,9 +93,9 @@ class ShopController extends Controller
     }
 
      /**
-      * アバター画像をリサイズして保存します
+      * 画像をリサイズして保存します
       *
-      * @param UploadedFile $file アップロードされたアバター画像
+      * @param UploadedFile $file アップロードされた画像
       * @return string ファイル名
       */
 
