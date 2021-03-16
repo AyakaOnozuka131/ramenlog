@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Mail\BareMail;
+use App\Notifications\PasswordResetNotification;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,6 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Password;
 
 class User extends Authenticatable
 {
@@ -57,5 +61,9 @@ class User extends Authenticatable
     public function likes():BelongsToMany
     {
         return $this->belongsToMany('App\Shop','likes')->withTimestamps();
+    }
+
+    public function sendPasswordResetNotification($token){
+        $this->notify(new PasswordResetNotification($token, new BareMail()));
     }
 }

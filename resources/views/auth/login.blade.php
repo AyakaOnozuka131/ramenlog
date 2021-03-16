@@ -32,7 +32,7 @@
         <div class="p-form__btn">
           <button type="submit" class="c-primary__btn">登録する</button>
         </div>
-        <div class="page-login__text"><a href="" class="page-login__link">パスワードをお忘れの方はこちら　&rang;&rang;</a></div>
+        <div class="page-login__text"><a href="{{ route('password.request') }}" class="page-login__link">パスワードをお忘れの方はこちら　&rang;&rang;</a></div>
       </div>
     </form>
     </div>
