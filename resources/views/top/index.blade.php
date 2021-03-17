@@ -19,8 +19,8 @@
                 <div class="page-searchForm__category__select c-selectBox">
                   <select name="category_id">
                     @foreach($categories as $id => $name)
-                    <option value="{{ $id }}">{{ $name }}</option>
-                  @endforeach
+                      <option value="{{ $id }}">{{ $name }}</option>
+                    @endforeach
                   </select>
                 </div>
               </li>
@@ -41,10 +41,12 @@
 
         @foreach ($shops as $shop)
           <article class="c-card">
-            <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
+            <a href="{{ route('shops.show',['shop'=>$shop]) }}" target="_blank" rel="noopener noreferrer" class="c-card__link">
               <div class="l-card__imgWrap">
                 <div class="c-card__img">
-                  <img src="https://placehold.jp/320x226.png" alt="">
+                  @if (!empty($shop->image_path1))
+                  <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image">
+                  @endif
                 </div>
               </div>
               <div class="c-card__content">
@@ -54,8 +56,13 @@
                   {{ $shop->explanation }}
                 </p>
                 <div class="c-card__catWrap">
-                  <p class="c-card__cat">醤油ラーメン</p>
-                  <p class="c-card__cat">醤油ラーメン</p>
+                  <p class="c-card__cat">
+                    @foreach($categories as $id => $name)
+                    @if($shop->category_id == $id)
+                      {{ $name }}
+                    @endif
+                    @endforeach
+                  </p>
                 </div>
               </div>
             </a>
@@ -64,93 +71,11 @@
 
       </div>
       <div class="page-new__btnWrap">
-        <a href="" class="c-primary__btn">一覧を見る</a>
+        <a href="{{ route('shops.index') }}" class="c-primary__btn">一覧を見る</a>
       </div>
     </div>
   </section>
 
-    <section class="page-recommend">
-      <div class="l-content-lg">
-        <h2 class="c-primary__heading"><span class="c-primary__heading__en">RECOMMENDED</span>オススメラーメン情報</h2>  
-        <div class="l-cardWrap l-cardWrap--col4">
-          <article class="c-card">
-            <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-              <div class="l-card__imgWrap">
-                <div class="c-card__img">
-                  <img src="https://placehold.jp/320x226.png" alt="">
-                </div>
-              </div>
-              <div class="c-card__content">
-                <p class="c-card__area">高崎市</p>
-                <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                <div class="c-card__catWrap">
-                  <p class="c-card__cat">醤油ラーメン</p>
-                  <p class="c-card__cat">醤油ラーメン</p>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="c-card">
-            <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-              <div class="l-card__imgWrap">
-                <div class="c-card__img">
-                  <img src="https://placehold.jp/320x226.png" alt="">
-                </div>
-              </div>
-              <div class="c-card__content">
-                <p class="c-card__area">高崎市</p>
-                <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                <div class="c-card__catWrap">
-                  <p class="c-card__cat">醤油ラーメン</p>
-                  <p class="c-card__cat">醤油ラーメン</p>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="c-card">
-            <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-              <div class="l-card__imgWrap">
-                <div class="c-card__img">
-                  <img src="https://placehold.jp/320x226.png" alt="">
-                </div>
-              </div>
-              <div class="c-card__content">
-                <p class="c-card__area">高崎市</p>
-                <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                <div class="c-card__catWrap">
-                  <p class="c-card__cat">醤油ラーメン</p>
-                  <p class="c-card__cat">醤油ラーメン</p>
-                </div>
-              </div>
-            </a>
-          </article>
-          <article class="c-card">
-            <a href="http://" target="_blank" rel="noopener noreferrer" class="c-card__link">
-              <div class="l-card__imgWrap">
-                <div class="c-card__img">
-                  <img src="https://placehold.jp/320x226.png" alt="">
-                </div>
-              </div>
-              <div class="c-card__content">
-                <p class="c-card__area">高崎市</p>
-                <h3 class="c-card__title">ダミーダミーダミーダミーダミー</h3>
-                <p class="c-card__text">ダミーダミーダミーダミーダミーダミー</p>
-                <div class="c-card__catWrap">
-                  <p class="c-card__cat">醤油ラーメン</p>
-                  <p class="c-card__cat">醤油ラーメン</p>
-                </div>
-              </div>
-            </a>
-          </article>
-        </div>
-        <div class="page-recommend__btn">
-          <a href="" class="c-primary__btn">一覧を見る</a>
-        </div>
-      </div>
-    </section>
 
     <section class="page-support">
       <div class="l-content-lg">
@@ -164,37 +89,13 @@
         
         <div class="page-support__search">
           <div class="c-searchContent">
-            <h2 class="c-secondary__heading">エリアで探す</h2>
-            <ul class="c-searchContent__list">
-              <li class="c-searchContent__item">
-                <a href="http://" class="c-searchContent__link">前橋市</a>
-              </li>
-              <li class="c-searchContent__item">
-                <a href="http://" class="c-searchContent__link">前橋市</a>
-              </li>
-              <li class="c-searchContent__item">
-                <a href="http://" class="c-searchContent__link">前橋市</a>
-              </li>
-              <li class="c-searchContent__item">
-                <a href="http://" class="c-searchContent__link">前橋市</a>
-              </li>
-            </ul>
-          </div>
-          <div class="c-searchContent">
             <h2 class="c-secondary__heading">好みで探す</h2>
             <ul class="c-searchContent__list">
+              @foreach($categories as $id => $name)
               <li class="c-searchContent__item">
-                <a href="http://" class="c-searchContent__link">前橋市</a>
+                <a href="{{ route('shops.index', 'category_id='.$id ) }}" class="c-searchContent__link">{{ $name }}</a>
               </li>
-              <li class="c-searchContent__item">
-                <a href="http://" class="c-searchContent__link">前橋市</a>
-              </li>
-              <li class="c-searchContent__item">
-                <a href="http://" class="c-searchContent__link">前橋市</a>
-              </li>
-              <li class="c-searchContent__item">
-                <a href="http://" class="c-searchContent__link">前橋市</a>
-              </li>
+              @endforeach
             </ul>
           </div>
         </div>

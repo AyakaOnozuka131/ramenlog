@@ -12,7 +12,7 @@ class TopController extends Controller
     public function index(){
         $shops = Shop::take(4)->get()->sortByDesc('created_at');
         $category = new Category;
-        $categories = $category->getLists()->prepend('選択', '');
+        $categories = $category->getLists();
         return view('top.index',['shops'=>$shops,'categories'=>$categories]);
     }
 }
