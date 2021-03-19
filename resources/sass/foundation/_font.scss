@@ -1,0 +1,47 @@
+/* ------------------------------
+- font
+------------------------------ */
+@font-face {
+	font-family: 'Noto Sans JP Subset';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local("Noto Sans CJK JP Regular"),
+	url('../../../public/fonts/NotoSansCJKjp-Regular.woff') format('woff2'),
+	url('../../../public/fonts/NotoSansCJKjp-Regular.woff2') format('woff'),
+}
+
+@font-face {
+	font-family: 'Noto Sans JP Subset';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: local("Noto Sans CJK JP Medium"),
+	url('../../../public/fonts/NotoSansCJKjp-Medium.woff2') format('woff2'),
+	url('../../../public/fonts/NotoSansCJKjp-Medium.woff') format('woff'),
+}
+
+@font-face {
+	font-family: 'Noto Sans JP Subset';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local("Noto Sans CJK JP Bold"),
+	url('../../../public/fonts/NotoSansCJKjp-Bold.woff2') format('woff2'),
+	url('../../../public/fonts/NotoSansCJKjp-Bold.woff') format('woff'),
+}
+
+@font-face {
+	font-family: 'Noto Sans JP Subset';
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: local("Noto Sans CJK JP Black"),
+	url('../../../public/fonts/NotoSansCJKjp-Black.woff.woff2') format('woff2'),
+	url('../../../public/fonts/NotoSansCJKjp-Black.woff.woff') format('woff'),
+}
+
+/* ------------------------------
+- Lato
+------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');

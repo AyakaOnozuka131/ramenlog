@@ -1,0 +1,101 @@
+/* ==============================
+	c-profile
+===============================*/
+.c-profile{
+	display: flex;
+	align-items: center;
+	background: $baseColorWhite;
+	padding: 2rem;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+	.c-profile__img{
+		width: 16%;
+		margin-right: 3rem;
+		overflow: hidden;
+		border-radius: 50%;
+	}
+	.c-profile__content{
+		width: 80%;
+	}
+	.c-profile__name{
+		font-size: 1.8rem;
+		margin-bottom: 0.5rem;
+	}
+	.c-profile__email{
+		font-size: 1.6rem;
+	}
+}
+@include mq-up {
+	.c-profile{
+		margin-bottom: 3rem;
+	}
+}
+
+@include mq-down {
+	.c-profile{
+		max-width: 100%;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+		.c-profile__img{
+			width: 36%;
+			margin-right: 2rem;
+		}
+	}
+}
+
+/* ==============================
+	c-profileArchive
+===============================*/
+
+@include mq-up {
+	.c-profileArchive{
+		position: relative;
+		+.c-profileArchive{
+			margin-top: 4rem;
+		}
+		.c-secondary__heading{
+			margin-bottom: 2rem;
+		}
+		.c-card{
+			width: 32%;
+			&:not(:nth-child(3n)){
+				margin-right: 2%;
+			}
+			&:nth-child(n+4){
+				margin-top: 2%;
+			}
+		}
+		.p-profileArchive__btn{
+			position: absolute;
+			top: 0;
+			right: 0;
+			max-width: 30%;
+		}
+		.c-primary__btn{
+			font-size: 1.4rem;
+			padding: 0.1rem 2rem;
+		}
+	}
+}
+@include mq-down {
+	.c-profileArchive{
+		+.c-profileArchive{
+			margin-top: 3rem;
+		}
+		.c-secondary__heading{
+			margin-bottom: 1rem;
+		}
+		.c-card{
+			width: 48%;
+			&:not(:nth-child(2n)){
+				margin-right: 2%;
+			}
+			&:nth-child(n+3){
+				margin-top: 4%;
+			}
+		}
+		.p-profileArchive__btn{
+			max-width: 60%;
+			margin: 2rem auto 0;
+		}
+	}
+}

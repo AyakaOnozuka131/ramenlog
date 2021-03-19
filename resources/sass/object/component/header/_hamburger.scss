@@ -1,0 +1,85 @@
+/* ------------------------------
+- header _hamburger
+------------------------------ */
+@include mq-up(md) {
+  .c-hamButton{
+    display: none;
+  }
+}
+@include mq-down(md) {
+  .c-hamButton {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: fixed;
+    top: 3rem;
+    right: 1.5rem;
+  }
+  .c-hamburger {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border-radius: 50%;
+    border: 1px solid $keyColor;
+    box-shadow: 0 0 2rem transparent;
+    outline: none;
+    transition: all .3s ease-in-out;
+    z-index: 100;
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 .5rem rgba(255, 255, 255, .5 );
+    }
+  }
+  .c-hamburger__line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 18px;
+    height: 2px;
+    background-color: $keyColor;
+    transition: inherit;
+    &::before,
+    &::after{
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      content: '';
+      transition: inherit;
+    }
+    &::before{
+      top: -5px;
+    }
+    &::after{
+      top: 5px;
+    }
+  }
+  .c-hamburger[aria-expanded="true"] {
+    .c-hamburger__line{
+      background-color: transparent;
+      &::before,
+      &::after{
+        top: 0;
+        background-color: $keyColor;
+      }
+      &::before{
+        transform: rotate(45deg);
+      }
+      &::after{
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

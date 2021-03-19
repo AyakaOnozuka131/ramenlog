@@ -45,12 +45,13 @@
               <div class="l-card__imgWrap">
                 <div class="c-card__img">
                   @if (!empty($shop->image_path1))
-                  <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image">
+                    <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image">
+                  @else
+                    <img src="/images/noimage.jpg" alt="image" class="noimage">
                   @endif
                 </div>
               </div>
               <div class="c-card__content">
-                <p class="c-card__area">高崎市</p>
                 <h3 class="c-card__title">{{ $shop->name }}</h3>
                 <p class="c-card__text">
                   {{ $shop->explanation }}

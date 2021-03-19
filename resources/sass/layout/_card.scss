@@ -1,0 +1,28 @@
+.l-cardWrap{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@include mq-up {
+	.l-cardWrap--col4{
+		justify-content: space-between;
+		.c-card{
+			width: (225 /960)*100%;
+		}
+	}
+}
+
+@include mq-down {
+	.l-cardWrap--col4{
+		.c-card{
+			width: 48%;
+			&:not(:nth-child(2n)){
+				margin-right: 4%;
+			}
+			&:nth-child(n+3){
+				margin-top: 4%;
+			}
+		}
+	}
+}
+

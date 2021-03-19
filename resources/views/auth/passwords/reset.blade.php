@@ -6,6 +6,7 @@
 
 <main class="l-main">
 
+  <div class="l-page">
     <div class="page-pass__remind">
       <div class="l-content-sm">
         <form action="{{ route('password.update') }}" method="post">
@@ -32,6 +33,7 @@
       </form>
       </div>
     </div>
+  </div>
 
   </main>
 

@@ -1,0 +1,17 @@
+.c-error{
+	background-color: #f8d7da;
+	border-color: #f5c2c7;
+	padding: 1.6rem;
+	margin-bottom: 2.4rem;
+	.c-error__list{
+		padding-left: 2rem;
+	}
+	.c-error__item{
+		color: $dangerFontColor;
+		font-size: 1.4rem;
+		list-style: disc;
+		&+.c-error__item{
+			margin-top: 0.5rem;
+		}
+	}
+}

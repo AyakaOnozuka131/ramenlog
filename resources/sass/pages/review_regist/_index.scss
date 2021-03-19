@@ -1,0 +1,46 @@
+/* ==============================
+	page-regist
+===============================*/
+.page-regist{
+	.page-regist__item{
+		+.page-regist__item{
+			margin-top: 2rem;
+		}
+	}
+	.page-regist__text{
+		padding-bottom: 0.5rem;
+		margin-bottom: 1rem;
+		border-bottom: 2px solid $keyColor;
+	}
+	.p-form__btn{
+		max-width: 160px;
+		margin: 3rem auto 0;
+	}
+}
+@include mq-up {
+	.page-regist{
+		.page-regist__text{
+			font-size: 1.6rem;
+		}
+	}
+	.page-regist__item__row{
+		display: flex;
+		justify-content: space-between;
+	}
+	.page-regist__item__rowBlock{
+		width: 30%;
+	}
+}
+@include mq-down {
+	.page-regist{
+		.page-regist__text{
+			font-size: 1.4rem;
+		}
+		.page-regist__item__rowBlock{
+			+.page-regist__item__rowBlock{
+				margin-top: 2rem;
+			}
+		}
+	}
+}
+

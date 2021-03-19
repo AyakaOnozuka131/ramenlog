@@ -1,0 +1,114 @@
+/* ------------------------------
+- common layout
+------------------------------ */
+[class*=l-content-] {
+  @include mq-up {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include mq-down {
+    width: 100%;
+    &:not(.l-content-ex) {
+      padding: 0 1.5rem;
+    }
+  }
+}
+.l-content {
+  &-lg,&-ex {
+    @include mq-up(md) {
+      max-width: 960px;
+    }
+	}
+	&-md-lg{
+		max-width: 880px;
+	}
+  &-md {
+    @include mq-up(md) {
+      max-width: 800px;
+    }
+	}
+	&-sm {
+    @include mq-up(md) {
+      max-width: 720px;
+    }
+	}
+}
+
+/* ------------------------------
+- main
+------------------------------ */
+.l-main{
+   @include mq-up(md) {
+    padding-top: 9rem;
+  }
+  @include mq-down(md) {
+    padding-top: 5.6rem;
+  }
+}
+
+/* ------------------------------
+- l-page
+------------------------------ */
+.l-page{
+  @include mq-up(md) {
+    padding: 8rem 0;
+  }
+  @include mq-down(md) {
+    padding: 5.6rem 0;
+  }
+}
+
+/* ------------------------------
+- archive
+------------------------------ */
+.l-archive {
+  @include mq-up(md) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  @include mq-down(md) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.l-archiveContent {
+  @include mq-up(md) {
+    width: 72.5%;
+  }
+}
+
+/* ------------------------------
+- l-profileContent
+------------------------------ */
+.l-profile{
+  @include mq-up(md) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-bottom: 8rem;
+  }
+  @include mq-down(md) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.l-profileContent{
+  @include mq-up(md) {
+    width: 72.5%;
+  }
+}
+
+/* ------------------------------
+- l-side
+------------------------------ */
+.l-side {
+  @include mq-up(md) {
+    width: 22.5%;
+  }
+  @include mq-down(md) {
+    margin-bottom: 3rem;
+  }
+}

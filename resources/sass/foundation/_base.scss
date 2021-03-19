@@ -1,0 +1,100 @@
+/* ------------------------------
+- reset
+------------------------------ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ vertical-align:baseline;
+ background:transparent;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  background: $baseColor;
+	font-family: 'Noto Sans CJK JP', sans-serif;
+	font-weight: 400;
+  color: $baseFontColor;
+  @include mq-up {
+    font-size: 10px;
+  }
+  @include mq-down {
+    font-size: 2.44444vw;
+  }
+}
+body {
+  width: 100%;
+	overflow-x: hidden;
+}
+main {
+  display: block;
+}
+li {
+  list-style-type: none;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+	color: $baseFontColor;
+	cursor: pointer;
+  @include mq-up {
+		transition: all .3s;
+		&:hover{
+			opacity: 0.7;
+		}
+	}
+}
+img {
+  vertical-align: bottom;
+  width: 100%;
+  height: auto;
+}
+h1, h2, h3, h4, h5, h6, a, li, a span {
+  line-height: 1.7;
+}
+p, p a ,p span {
+  line-height: 1.7;
+}
+sup {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+input, button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input{
+  background-color: $baseColor;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+}
+button{
+  border: none;
+  @include mq-up {
+		transition: all .3s;
+		&:hover{
+			opacity: 0.7;
+		}
+	}
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+

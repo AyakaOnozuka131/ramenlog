@@ -1,0 +1,32 @@
+/* ==============================
+	archive
+===============================*/
+@include mq-up {
+	.c-archiveContent{
+		margin-bottom: 2rem;
+		.c-card{
+			width: 32%;
+			&:not(:nth-child(3n)){
+				margin-right: 2%;
+			}
+			&:nth-child(n+4){
+				margin-top: 2%;
+			}
+		}
+	}
+}
+
+@include mq-down {
+	.c-archiveContent{
+		margin-bottom: 3rem;
+		.c-card{
+			width: 48%;
+			&:not(:nth-child(2n)){
+				margin-right: 2%;
+			}
+			&:nth-child(n+3){
+				margin-top: 4%;
+			}
+		}
+	}
+}

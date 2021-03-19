@@ -1,0 +1,127 @@
+/* ------------------------------
+- select box
+------------------------------ */
+.c-selectBox{
+  position: relative;
+  &::after{
+    content: "expand_more";
+    font-family: 'Material Icons';
+    font-size: 2.4rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+  }
+  select{
+    padding: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $baseBorderColor;
+  }
+}
+/* ------------------------------
+- c-inputText
+------------------------------ */
+.c-inputText{
+  width: 100%;
+  font-size: 1.6rem;
+  background: $baseColorWhite;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+}
+/* ------------------------------
+- c-img__areaDrop
+------------------------------ */
+.c-img__areaDrop{
+  width: 100%;
+  height: 14rem;
+  background: $baseColorWhite;
+  color: $lightCatColor;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.c-img__inputFile{
+  opacity:0;
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: 2; /* 必ずz-indexをつけないと登録画像を変更する際にドラッグ＆ドロップできなくなる*/
+}
+.c-img__prevImg{
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  object-fit: cover;
+}
+
+/* ------------------------------
+- c-textArea
+------------------------------ */
+.c-textArea{
+  width: 100%;
+  height: 24rem;
+  background: $baseColorWhite;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  border-radius: 5px;
+}
+
+/* ------------------------------
+- c-label
+------------------------------ */
+.c-label{
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+
+/* ------------------------------
+- c-checkbox
+------------------------------ */
+.c-checkbox{
+  position: relative;
+  padding-left: 4rem;
+  font-size: 1.2rem;
+  &::before,&::after{
+    content: "";
+    position: absolute;
+    display: block;
+  }
+  &::before{
+    top: 50%;
+    left: 9px;
+    width: 6px;
+    height: 11px;
+    margin-top: -9px;
+    border-right: 2px solid $keyColor;
+    border-bottom: 2px solid $keyColor;
+    opacity: 0;
+    transform: rotate(45deg);
+    z-index: 1;
+    transition: all .3s;
+  }
+  &::after{
+    top: 50%;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    border: none;
+    background-color: $baseColorWhite;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  }
+}
+input[type="checkbox"]:checked+.c-checkbox:before{
+  opacity: 1;
+}

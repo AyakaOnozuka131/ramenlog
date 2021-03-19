@@ -1,0 +1,81 @@
+/* ------------------------------
+- 改行
+------------------------------ */
+.visible {
+  @include mq-up {
+    &-lg,&-md,&-sm {
+      display: none;
+    }
+    &-xl {
+      display: inherit;
+    }
+  }
+  @include mq-between(md-xl) {
+    &-xl,&-md,&-sm {
+      display: none;
+    }
+    &-lg {
+      display: inherit;
+    }
+  }
+  @include mq-between {
+    &-xl,&-lg,&-sm {
+      display: none;
+    }
+    &-md {
+      display: inherit;
+    }
+  }
+  @include mq-down {
+    &-xl, &-lg,&-md {
+      display: none;
+    }
+    &-sm {
+      display: inherit;
+    }
+  }
+}
+
+/* ------------------------------
+- header hover
+------------------------------ */
+.is-underLine{
+  position: relative;
+  display: inline-block;
+  &::after{
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: $keyColor;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform .3s;
+  }
+  &:hover{
+    opacity: 1;
+    color: $keyColor;
+    &::after{
+      transform-origin: left top;
+      transform: scale(1, 1);
+    }
+  }
+}
+
+/* ------------------------------
+- header ham
+------------------------------ */
+.u-visuallyHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%); 
+  margin: -1px;
+}

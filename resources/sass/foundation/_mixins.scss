@@ -1,0 +1,54 @@
+// --- Transform Center ---
+// absoluteした要素に対して中央揃えしたい時に使用
+// --- Contents Inner ---
+@mixin contentsInner{
+  @include mq-up{
+    max-width: $pcContainerInner;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+  @include mq-down{
+    width: 100%;
+    padding: 0 vw(20px);
+  }
+}
+// --- Media Query ---
+@mixin mq-up($breakpoint: sm) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+@mixin mq-down($breakpoint: sm) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+@mixin mq-between($breakpoint: sm-md) {
+  @media #{map-get($breakpoint-between, $breakpoint)} {
+    @content;
+  }
+}
+
+// --- Responsive iframe ---
+@mixin responsiveIframe($width, $height) {
+  position: relative;
+  overflow: hidden;
+  padding-top: percentage($height / $width);
+  @content;
+  iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+// --- line-height ---
+@mixin line-height( $psd-size , $font-size ) {
+	　line-height: $psd-size / $font-size;
+}
+
+// --- letter-spacing ---
+@mixin letter-spacing( $trakking ) {
+	　letter-spacing: $trakking / 1000 + em;
+}

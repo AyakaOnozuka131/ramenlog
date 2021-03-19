@@ -1,0 +1,33 @@
+/* ==============================
+	page-profileChange
+===============================*/
+.page-profileChange{
+	.page-profileChange__item{
+		+.page-profileChange__item{
+			margin-top: 2rem;
+		}
+	}
+	.page-profileChange__text{
+		padding-bottom: 0.5rem;
+		margin-bottom: 1rem;
+		border-bottom: 2px solid $keyColor;
+	}
+	.p-form__btn{
+		max-width: 160px;
+		margin: 3rem auto 0;
+	}
+}
+@include mq-up {
+	.page-profileChange{
+		.page-profileChange__text{
+			font-size: 1.6rem;
+		}
+	}
+}
+@include mq-down {
+	.page-profileChange{
+		.page-profileChange__text{
+			font-size: 1.4rem;
+		}
+	}
+}

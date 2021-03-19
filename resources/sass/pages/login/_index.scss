@@ -1,0 +1,24 @@
+/* ==============================
+	page-login
+===============================*/
+.page-login{
+	.c-form__item{
+		+.c-form__item{
+			margin-top: 2rem;
+		}
+	}
+	.p-form__btn{
+		max-width: 160px;
+		margin: 2rem auto 0;
+	}
+	.page-login__link{
+		margin-top: 2rem;
+		display: block;
+		text-align: center;
+		font-size: 1.3rem;
+		color: $linkColor;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}

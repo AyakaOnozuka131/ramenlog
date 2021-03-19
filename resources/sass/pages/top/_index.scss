@@ -1,0 +1,249 @@
+/* ==============================
+	top
+===============================*/
+/* ------------------------------
+- page-searchArea
+------------------------------ */
+.page-searchArea{
+	background: url(../../../public/images/top/bg_top_serch.png);
+	.page-searchArea__heading{
+		text-align: center;
+		font-size: 1.6rem;
+		color: $lightFontColor;
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 3rem;
+			height: 0.1rem;
+			background: $keyColor;
+		}
+		.en{
+			font-size: 1.6em;
+			font-family: "Lato", sans-serif;
+			display: block;
+			line-height: 1.3;
+		}
+	}
+	.page-searchContent{
+		background: $bgBaseColor;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.26)
+	}
+	.page-searchForm__keyword{
+		input{
+			padding: 1rem;
+			width: 100%;
+			border-radius: 5px;
+			background: #fff;
+			margin-bottom: 2rem;
+			&::placeholder{
+				color: $lightFontColor;
+			}
+		}
+	}
+	.page-searchForm__btn{
+		text-align: center;
+		.c-primary__btn{
+			max-width: 18rem;
+			margin: 0 auto;
+		}
+	}
+}
+
+@include mq-up {
+	.page-searchArea{
+		padding: 5rem 0;
+		.page-searchArea__heading{
+			padding-bottom: 1rem;
+			margin-bottom: 3rem;
+		}
+		.page-searchContent{
+			padding: 5rem;
+		}
+		.page-searchForm__keyword{
+			input{
+				font-size: 1.4rem;
+			}
+		}
+		.page-searchForm__category{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 2rem;
+		}
+		.page-searchForm__category__item{
+			width: 100%;
+		}
+		.page-searchForm__category__text{
+			font-size: 1.4rem;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+@include mq-down {
+	.page-searchArea{
+		padding: 3rem 0;
+		.page-searchArea__heading{
+			padding-bottom: 1rem;
+			margin-bottom: 2rem;
+		}
+		.page-searchContent{
+			padding: 2rem;
+		}
+		.page-searchForm__keyword{
+			input{
+				font-size: 1.6rem;
+			}
+		}
+		.page-searchForm__category{
+			margin-bottom: 2rem;
+		}
+		.page-searchForm__category__item{
+			+.page-searchForm__category__item{
+				margin-top: 2rem;
+			}
+		}
+		.page-searchForm__category__text{
+			font-size: 1.4rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+/* ------------------------------
+- page-new
+------------------------------ */
+@include mq-up {
+	.page-new{
+		padding: 8rem 0;
+		.page-new__btnWrap{
+			margin: 3rem auto 0;
+			max-width: 240px;
+		}
+	}
+}
+@include mq-down {
+	.page-new{
+		padding: 6rem 0;
+		.page-new__btnWrap{
+			margin: 3rem auto 0;
+			max-width: 80%;
+		}
+	}
+}
+
+/* ------------------------------
+- page-recommend
+------------------------------ */
+.page-recommend{
+	background-color: $baseColorWhite;
+}
+
+@include mq-up {
+	.page-recommend{
+		padding: 8rem 0;
+		.page-recommend__btn{
+			margin: 3rem auto 0;
+			max-width: 240px;
+		}
+	}
+}
+@include mq-down {
+	.page-recommend{
+		padding: 6rem 0;
+		.page-recommend__btn{
+			margin: 3rem auto 0;
+			max-width: 80%;
+		}
+	}
+}
+
+/* ------------------------------
+- page-support
+------------------------------ */
+.page-support{
+	.page-support__lead{
+		text-align: center;
+	}
+}
+
+@include mq-up {
+	.page-support{
+		padding: 8rem 0;
+		.page-support__lead{
+			font-size: 1.6rem;
+			margin-bottom: 4rem;
+		}
+	}
+}
+@include mq-down {
+	.page-support{
+		padding: 6rem 0;
+		.page-support__lead{
+			font-size: 1.4rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+
+/* ------------------------------
+- page-support page-support__search
+------------------------------ */
+.page-support__search{
+	.c-searchContent{
+		background: $baseColorWhite;
+		border-radius: 5px;
+		box-shadow: 0 4px 8px rgba(0,0,0,.12);
+		padding: 2rem;
+	}
+	.c-secondary__heading{
+		margin-bottom: 1rem;
+	}
+	.c-searchContent__list{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.c-searchContent__item{
+		margin: 0.5rem 1rem 0.5rem 0;
+	}
+	.c-searchContent__link{
+		font-size: 1.2rem;
+		border-radius: 5px;
+		border: 1px solid $lightFontColor;
+		padding: 0.3rem 1rem;
+		color: $lightFontColor;
+		display: block;
+		width: 100%;
+		&:hover{
+			background: $bgAccentColor;
+		}
+	}
+}
+
+@include mq-up {
+	.page-support__search{
+		display: flex;
+		justify-content: space-between;
+		.c-searchContent{
+			width: 100%;
+		}
+
+	}
+}
+@include mq-down {
+	.page-support__search{
+		.c-searchContent{
+			width: 100%;
+			+.c-searchContent{
+				margin-top: 2rem;
+			}
+		}
+	}
+}
+
+

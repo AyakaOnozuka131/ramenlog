@@ -2,17 +2,17 @@
   <ul class="p-sideContent">
     <li class="p-sideItem p-sideItem--profile">
       <div class="p-sideItem--profile__box">
-        <a href="{{ route('review.create') }}" class="p-sideItem--profile__link">
-          <span class="material-icons">message</span>
-          口コミを投稿する
+        <a href="{{ route('shops.create') }}" class="p-sideItem--profile__link">
+          <span class="material-icons">store</span>
+          ラーメン屋を登録する
         </a>
       </div>
     </li>
     <li class="p-sideItem p-sideItem--profile">
       <div class="p-sideItem--profile__box">
-        <a href="{{ route('shops.create') }}" class="p-sideItem--profile__link">
-          <span class="material-icons">store</span>
-          ラーメン屋を登録する
+        <a href="{{ route('review.create') }}" class="p-sideItem--profile__link">
+          <span class="material-icons">message</span>
+          口コミを投稿する
         </a>
       </div>
     </li>
@@ -26,7 +26,7 @@
     </li>
     <li class="p-sideItem p-sideItem--profile">
       <div class="p-sideItem--profile__box">
-        <a href="" class="p-sideItem--profile__link">
+        <a href="{{ route('password.request') }}" class="p-sideItem--profile__link">
           <span class="material-icons">vpn_key</span>
           パスワード変更
         </a>

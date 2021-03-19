@@ -102,7 +102,7 @@ class ShopController extends Controller
     private function saveAvatar(UploadedFile $file): string
     {
         $tempPath = $this->makeTempPath(); //一時ファイルを生成してパスを取得する
-        Image::make($file)->fit(200, 200)->save($tempPath); //Intervention Imageを使用して、画像をリサイズ後、一時ファイルに保存。
+        Image::make($file)->fit(320, 226)->save($tempPath); //Intervention Imageを使用して、画像をリサイズ後、一時ファイルに保存。
         $filePath = Storage::disk('public')->putFile('shopImages', new File($tempPath)); //Storageファサードを使用して画像をディスクに保存
         return basename($filePath); //パスの最後にある名前の部分を返す
     }
@@ -130,7 +130,8 @@ class ShopController extends Controller
     {
         $shop_id = $shop->id;
         $reviews = Review::where('shop_select',$shop_id)->get();
-        $user = $reviews->pluck('user_id')->first();
+        $user_id = $reviews->pluck('user_id')->first();
+        $user = User::where('id',$user_id)->first();
 
         return view('shops.show',['shop'=>$shop, 'reviews'=>$reviews, 'user'=>$user]);
     }

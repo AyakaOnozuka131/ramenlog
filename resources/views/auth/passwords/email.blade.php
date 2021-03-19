@@ -7,6 +7,7 @@
 
 <main class="l-main">
 
+  <div class="l-page">
     <div class="page-pass__remind">
       <div class="l-content-sm">
         <form action="{{ route('password.email') }}" method="post">
@@ -15,15 +16,18 @@
           <p class="page-pass__remind__lead">
             パスワードを忘れてしまった場合、<br class="visible-sm">以下から再設定することが可能です。<br>登録時に使用したメールアドレスを入力してください。
           </p>
+
+            @include('common.error_card_list')
+
             @if (session('status'))
-              <p class="">
+              <p class="c-success">
                 {{ session('status') }}
               </p>
             @endif
           <div class="p-form__content">
             <div class="c-form__item">
               <label for="email" class="c-label">Email</label>
-              <input type="email" name="email" id="email" class="c-inputText">
+              <input type="email" name="email" id="email" class="c-inputText" required>
             </div>
             <div class="p-form__btn">
               <button type="submit" class="c-primary__btn">送信する</button>
@@ -33,6 +37,8 @@
       </form>
       </div>
     </div>
+  </div>
+
 
   </main>
 

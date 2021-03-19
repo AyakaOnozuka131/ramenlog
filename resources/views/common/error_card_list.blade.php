@@ -1,8 +1,8 @@
 @if ($errors->any())
-  <div class="card-text text-left alert alert-danger">
-    <ul class="mb-0">
+  <div class="c-error">
+    <ul class="c-error__list">
       @foreach($errors->all() as $error)
-        <li>{{ $error }}</li>
+        <li class="c-error__item">{{ $error }}</li>
       @endforeach
     </ul>
   </div>

@@ -1,0 +1,63 @@
+// --- Colors ---
+$baseColor: #F4F5F7;
+$baseColorWhite: #fff;
+$keyColor: #ff8228;
+$maskColor: #000;
+
+
+// --- bg ---
+$bgBaseColor: #f2f2f2;
+$bgAccentColor: #FFD180;
+$bgFooterColor: #797e93;
+
+
+
+// --- Font Colors ---
+$baseFontColor: #333;
+$keyFontColor: #fff;
+$headingFontColor: #414150;
+$lightFontColor: #797e93;
+$lightCatColor: #999;
+$starFontColor: gold;
+$linkColor: #71bbd6;
+$dangerFontColor: #842029;
+
+$baseBorderColor: #9e9e9e;
+
+// button
+$headerCvSearch: #ff8228;
+$headerCvReview: #F4511E;
+
+// icon
+$favoriteIconColor: #F06292;
+
+// --- Width ---
+$pcDesignWidth: 1400px;
+$spDesignWidth: 375px;
+
+// --- Font ---
+$ffLato: 'Lato', sans-serif;
+
+// --- Break Point ---
+$breakpoint-up: (
+  'xs': 'screen and (min-width: 540px)',
+  'sm': 'screen and (min-width: 750px)',
+  'md': 'screen and (min-width: 960px)',
+  'lg': 'screen and (min-width: 1100px)',
+  'xl': 'screen and (min-width: 1400px)',
+) !default;
+
+$breakpoint-down: (
+  'xs': 'screen and (max-width: 539px)',
+  'sm': 'screen and (max-width: 749px)',
+  'md': 'screen and (max-width: 960px)',
+  'lg': 'screen and (max-width: 1099px)',
+  'xl': 'screen and (max-width: 1399px)',
+) !default;
+
+$breakpoint-between: (
+  'sm-md': 'screen and (min-width: 750px) and (max-width: 1099px)',
+  'sm-xl': 'screen and (min-width: 750px) and (max-width: 1399px)',
+  'md-lg': 'screen and (min-width: 960px) and (max-width: 1099px)',
+  'md-xl': 'screen and (min-width: 960px) and (max-width: 1399px)',
+) !default;
