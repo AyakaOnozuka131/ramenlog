@@ -1,0 +1,34 @@
+.c-pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+	.c-pagination__item{
+		border-radius: 50%;
+		&+.c-pagination__item{
+			margin-left: 1rem;
+		}
+	}
+	.c-pagination__link{
+		border-radius: 50%;
+		border: 1px solid $paginationBorder;
+		background: $baseColorWhite;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.4rem;
+		width: 3.6rem;
+		height: 3.6rem;
+		@include mq-up {
+			&:hover{
+				background:$bgAccentColor;
+			}
+		}
+	}
+	.is-active{
+		.c-pagination__link{
+			background: $keyColor;
+			border: 1px solid $keyColor;
+			color: $baseColor;
+		}
+	}
+}

@@ -26,9 +26,9 @@
   width: 100%;
   font-size: 1.6rem;
   background: $baseColorWhite;
+  border: 1px solid $baseBorderColor;
   border-radius: 5px;
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
 }
 /* ------------------------------
 - c-img__areaDrop
@@ -119,7 +119,7 @@
     border: none;
     background-color: $baseColorWhite;
     transform: translateY(-50%);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+    border: 1px solid $baseBorderColor;
   }
 }
 input[type="checkbox"]:checked+.c-checkbox:before{

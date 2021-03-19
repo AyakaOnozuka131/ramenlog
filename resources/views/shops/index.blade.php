@@ -34,7 +34,7 @@
                     <div class="c-card__catWrap">
                       @foreach($categories as $id => $name)
                       @if($shop->category_id == $id)
-                        {{ $name }}
+                      <p class="c-card__cat">{{ $name }}</p>
                       @endif
                       @endforeach
                     </div>
@@ -45,7 +45,7 @@
 
           </div>
           <div class="paginationWrap">
-            <!-- ペジャーが入ります -->
+            {{ $shops->links('vendor.pagination.custom') }}
           </div>
           
         </div>
