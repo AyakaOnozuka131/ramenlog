@@ -91,12 +91,17 @@
               <li class="page-regist__item">
                 <div class="page-regist__item__row">
                   <div class="page-regist__item__rowBlock">
-                    <p class="page-regist__text">画像1</p>
+                    <p class="page-regist__text">画像</p>
                     <label>
                       <div class="c-img__areaDrop">
-                        <input type="file" name="image_path1" class="c-img__inputFile">
-                        <img src="" alt="" class="c-img__prevImg">
-                        ドラッグ＆ドロップ<br>または<br>クリック
+                        <input type="file" name="image_path1" class="c-img__inputFile" accept="image/*" @change="onFileChange">
+                        <div v-if="preview">
+                          <img class="c-img__prevImg" :src="preview">
+                        </div>
+                        <div v-else>
+                          <img class="c-img__prevImg">
+                          ドラッグ＆ドロップ<br>または<br>クリック
+                        </div>
                       </div>
                     </label>
                   </div>

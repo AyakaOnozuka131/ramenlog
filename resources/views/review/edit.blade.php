@@ -69,9 +69,19 @@
                     <label>
                       <div class="c-img__areaDrop">
                       <input type="file" name="image_path1" class="c-img__inputFile">
-                      @if (!empty($review->image_path1))
-                      <img src="/storage/reviewImages/{{ $review->image_path1 }}" alt="image" class="c-img__prevImg">
-                      ドラッグ＆ドロップ<br>または<br>クリック
+                        @if (!empty($review->image_path1))
+                          <img src="/storage/reviewImages/{{ $review->image_path1 }}" alt="image" class="c-img__prevImg" accept="image/*" @change="onFileChange">
+                          <div v-if="preview">
+                            <img class="c-img__prevImg" :src="preview">
+                          </div>
+                        @else
+                        <div v-if="preview">
+                          <img class="c-img__prevImg" :src="preview">
+                        </div>
+                        <div v-else>
+                          <img class="c-img__prevImg">
+                          ドラッグ＆ドロップ<br>または<br>クリック
+                        </div>
                       @endif
                       </div>
                     </label>
@@ -80,11 +90,21 @@
                     <p class="page-regist__text">画像1</p>
                     <label>
                       <div class="c-img__areaDrop">
-                      <input type="file" name="image_path2" class="c-img__inputFile">
-                      @if (!empty($review->image_path1))
-                      <img src="/storage/reviewImages/{{ $review->image_path2 }}" alt="image" class="c-img__prevImg">
-                      ドラッグ＆ドロップ<br>または<br>クリック
-                      @endif
+                        <input type="file" name="image_path2" class="c-img__inputFile">
+                        @if (!empty($review->image_path1))
+                          <img src="/storage/reviewImages/{{ $review->image_path2 }}" alt="image" class="c-img__prevImg" accept="image/*" @change="onFileChange">
+                          <div v-if="preview">
+                            <img class="c-img__prevImg" :src="preview">
+                          </div>
+                        @else
+                          <div v-if="preview">
+                            <img class="c-img__prevImg" :src="preview">
+                          </div>
+                          <div v-else>
+                            <img class="c-img__prevImg">
+                            ドラッグ＆ドロップ<br>または<br>クリック
+                          </div>
+                        @endif
                       </div>
                     </label>
                   </div>
@@ -93,10 +113,20 @@
                     <label>
                       <div class="c-img__areaDrop">
                       <input type="file" name="image_path3" class="c-img__inputFile">
-                      @if (!empty($review->image_path1))
-                      <img src="/storage/reviewImages/{{ $review->image_path3 }}" alt="image" class="c-img__prevImg">
-                      ドラッグ＆ドロップ<br>または<br>クリック
-                      @endif
+                        @if (!empty($review->image_path1))
+                          <img src="/storage/reviewImages/{{ $review->image_path3 }}" alt="image" class="c-img__prevImg" accept="image/*" @change="onFileChange">
+                          <div v-if="preview">
+                            <img class="c-img__prevImg" :src="preview">
+                          </div>
+                        @else
+                          <div v-if="preview">
+                            <img class="c-img__prevImg" :src="preview">
+                          </div>
+                          <div v-else>
+                            <img class="c-img__prevImg">
+                            ドラッグ＆ドロップ<br>または<br>クリック
+                          </div>
+                        @endif
                       </div>
                     </label>
                   </div>

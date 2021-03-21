@@ -126,6 +126,7 @@
 	display: flex;
 	align-items: center;
 	border: 1px solid $favoriteIconColor;
+	background: $baseColorWhite;
 	color: $favoriteIconColor;
 	border-radius: 20px;
 	cursor: pointer;
@@ -147,6 +148,13 @@
 			}
 		}
 	}
+	&.is-liked{
+		background: $favoriteIconColor;
+		color: $baseColorWhite;
+		.material-icons{
+			color: $baseColorWhite;
+		}
+	}
 	@include mq-down {
 		margin: 0 auto;
 		.material-icons{
@@ -161,7 +169,10 @@
 .p-shop__tabs{
 	.p-shop__tabs__inner{
 		display: flex;
-		border-bottom: 1px solid $baseBorderColor;
+	}
+	.p-shop__tabs__item{
+		display: block;
+		width: 50%;
 	}
 }
 
@@ -174,16 +185,17 @@
 	border-top-left-radius: .25rem;
 	border-top-right-radius: .25rem;
 	border: 1px solid transparent;
-	width: 50%;
-	background-color: $baseColor;
+	border-bottom: 1px solid $baseBorderColor;
+	background-color: $baseColorWhite;
 	outline: none;
+	width: 100%;
 	&:hover{
 		background: $bgAccentColor;
 	}
 	&.is-current{
 		margin-bottom: -1px;
 		color: #495057;
-		border-color: $baseBorderColor $baseBorderColor $baseColor;
+		border-color: $baseBorderColor $baseBorderColor $baseColorWhite;
 		&:hover{
 			background: $bgAccentColor;
 		}
@@ -223,32 +235,34 @@
 	border-spacing: 0;
 	.c-table__head,
 	.c-table__content{
-		padding: 1rem;
+		padding: 1.5rem;
 	}
 }
 @include mq-up {
 	.c-table{
 		.c-table__head{
-			width: 200px;
+			font-size: 1.4rem;
+			width: 20rem;
 		}
 		.c-table__head{
 			border-bottom: 2px solid $keyColor;
 		}
 		.c-table__content{
-			font-size: 14px;
-			border-bottom: 2px solid $lightCatColor;
+			font-size: 1.4rem;
+			border-bottom: 2px solid $paginationBorder;
 		}
 	}
 }
 @include mq-down {
 	.c-table{
 		.c-table__head{
-			width: 100px;
+			font-size: 1.3rem;
+			width: 12rem;
 			border-bottom: 1px solid  $keyColor;
 		}
 		.c-table__content{
-			font-size: 13px;
-			border-bottom: 1px solid $lightCatColor;
+			font-size: 1.3rem;
+			border-bottom: 1px solid $paginationBorder;
 		}
 	}
 }
@@ -276,6 +290,9 @@
 }
 @include mq-up {
 	.c-review{
+		&+.c-review{
+			margin-top: 2rem;
+		}
 		.c-review__head{
 			margin-bottom: 2rem;
 		}
@@ -299,6 +316,9 @@
 }
 @include mq-down {
 	.c-review{
+		&+.c-review{
+			margin-top: 1.5rem;
+		}
 		.c-review__head{
 			margin-bottom: 2rem;
 			.c-review__userName{

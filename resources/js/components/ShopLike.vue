@@ -4,7 +4,7 @@
     @click="clickLike"
   >
     <span class="material-icons">favorite</span>
-    お気に入りに登録する
+    {{ toggleText }}
   </button>
 </template>
 
@@ -26,6 +26,15 @@ export default {
   data(){
     return{
       isLikedBy: this.initialIsLikedBy,
+    }
+  },
+  computed: {
+    toggleText(){
+      if(this.isLikedBy){
+        return 'お気に入りに登録済み'
+      }else{
+        return 'お気に入りに登録する';
+      }
     }
   },
   methods:{

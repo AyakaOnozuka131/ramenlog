@@ -100,10 +100,20 @@
                     <p class="page-regist__text">画像1</p>
                     <label>
                       <div class="c-img__areaDrop">
-                        <input type="file" name="image_path1" class="c-img__inputFile">
+                        <input type="file" name="image_path1" class="c-img__inputFile" accept="image/*" @change="onFileChange">
+                        <div v-if="preview">
+                          <img class="c-img__prevImg" :src="preview">
+                        </div>
                         @if (!empty($shop->image_path1))
-                        <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image" class="c-img__prevImg">
-                        ドラッグ＆ドロップ<br>または<br>クリック
+                          <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image" class="c-img__prevImg">
+                        @else
+                          <div v-if="preview">
+                            <img class="c-img__prevImg" :src="preview">
+                          </div>
+                          <div v-else>
+                            <img class="c-img__prevImg">
+                            ドラッグ＆ドロップ<br>または<br>クリック
+                          </div>
                         @endif
                       </div>
                     </label>

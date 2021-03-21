@@ -25,10 +25,20 @@
                 <p class="page-profileChange__text">プロフィール画像</p>
                 <label>
                   <div class="c-img__areaDrop">
-                  <input type="file" class="c-img__inputFile" name="avatar">
+                  <input type="file" class="c-img__inputFile" name="avatar" accept="image/*" @change="onFileChange">
                     @if (!empty($user->avatar))
-                      <img src="/storage/userImages/{{ $user->avatar }}" alt="image" class="c-img__prevImg">
-                      ドラッグ＆ドロップ<br>または<br>クリック
+                      <img src="/storage/userImages/{{ $user->avatar }}" alt="" class="c-img__prevImg">
+                      <div v-if="preview">
+                        <img class="c-img__prevImg" :src="preview">
+                      </div>
+                    @else
+                      <div v-if="preview">
+                        <img class="c-img__prevImg" :src="preview">
+                      </div>
+                      <div v-else>
+                        <img class="c-img__prevImg">
+                        ドラッグ＆ドロップ<br>または<br>クリック
+                      </div>
                     @endif
                   </div>
                 </label>

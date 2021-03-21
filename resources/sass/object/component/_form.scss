@@ -39,7 +39,7 @@
   background: $baseColorWhite;
   color: $lightCatColor;
   position: relative;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  border: 1px solid $baseBorderColor;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +72,7 @@
   height: 24rem;
   background: $baseColorWhite;
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  border: 1px solid $baseBorderColor;
   border-radius: 5px;
 }
 
