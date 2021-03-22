@@ -33,63 +33,41 @@
             <div class="c-secondary__heading">投稿した口コミ</div>
             <ul class="c-list__block">
   
-              @foreach ($shops as $shop)              
+              @foreach ($reviews as $review)              
                 <li class="c-list__block__item">
                   <h2 class="c-list__block__heading">
-                    <a href="{{ route('shops.show',['shop'=>$shop]) }}" class="c-list__block__item__link">
-                      {{ $shop->name }}
-                    </a>
+                    {{ $review->title }}
                   </h2>
     
-                  @if ( Auth::id() === $shop->user_id)
-                    <div class="c-list__block__content">
-                      <form action="" method="post">
-                        <button class="c-list__block__btn c-list__block__btn--delete" type="submit">削除</button>
-                      </form>
-                      <a href="{{ route('shops.edit',['shop'=>$shop]) }}" class="c-list__block__btn c-list__block__btn--edit">編集する</a>
-                    </div>
-    
-                    <div class="p-modal">
-                      <form action="{{ route('shops.destroy',['shop'=>$shop]) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <div class="p-modal__content">
-                          <p class="p-modal__text">{{ $shop->name }}を削除します。よろしいですか？</p>
+                  <div class="c-list__block__content">
+                    <button class="c-list__block__btn c-list__block__btn--delete" type="button" @click="modalId = '@json($review->id)'">
+                      <span class="material-icons">delete</span>
+                      削除
+                    </button>
+                    <a href="{{ route('review.edit',['review'=>$review]) }}" class="c-list__block__btn c-list__block__btn--edit">
+                      <span class="material-icons">edit</span>
+                      編集
+                    </a>
+                  </div>
+  
+                  <div class="c-modal" v-show="modalId === '@json($review->id)'">
+                    <div class="c-modal__bg"></div>
+                    <form action="{{ route('review.destroy',['review'=>$review]) }}" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <div class="c-modal__content">
+                        <p class="c-modal__text">{{ $review->title }}を削除します。よろしいですか？</p>
+                        <div class="c-modal__btnWrap">
+                          <button type="button" class="c-modal__btn c-modal__btn--cancel" @click="closeModal">キャンセル</button>
+                          <button type="submit" class="c-modal__btn c-modal__btn--delete">削除する</button>
                         </div>
-                        <div class="p-modal__btnWrap">
-                          <button class="p-modal__btn p-modal__btn--cancel">キャンセル</button>
-                          <button type="submit" class="p-modal__btn p-modal__btn--delete">削除する</button>
-                        </div>
-                      </form>
-                    </div>
-                  @endif
+                      </div>
+                    </form>
+                  </div>
                 </li>
               @endforeach
-            </ul>
-    
-            {{ $shops->links() }}
+            </ul>    
             
-            <div class="l-cardWrap">
-              @foreach($reviews as $review)
-              <article class="c-card">
-                <a href="{{ route('review.edit',['review'=>$review]) }}" class="c-card__link">
-                  <div class="l-card__imgWrap">
-                    <div class="c-card__img">
-                      @if (!empty($review->avatar))
-                        <img src="/storage/reviewImages/{{ $review->image_path1 }}" alt="image" class="">
-                      @else
-                        <img src="/images/noimage.jpg" alt="image" class="noimage">
-                      @endif
-                    </div>
-                  </div>
-                  <div class="c-card__content">
-                    <h3 class="c-card__title">{{ $review->title }}</h3>
-                    <p class="c-card__text">{{ $review->contents }}</p>
-                  </div>
-                </a>
-              </article>
-              @endforeach
-            </div>
           </div>
   
           <div class="c-profileArchive">

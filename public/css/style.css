@@ -716,6 +716,150 @@ input[type=checkbox]:checked + .c-checkbox:before {
   }
 }
 
+.c-list__block .c-list__block__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.c-list__block .c-list__block__item + .c-list__block__item {
+  border-top: 1px solid #9e9e9e;
+}
+.c-list__block .c-list__block__heading {
+  font-size: 1.6rem;
+  display: block;
+  line-height: 1.25;
+}
+.c-list__block .c-list__block__content {
+  display: flex;
+  justify-content: space-between;
+}
+.c-list__block .c-list__block__btn {
+  border-radius: 0.5rem;
+  color: #F4F5F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  line-height: 1;
+  width: 7rem;
+}
+.c-list__block .c-list__block__btn .material-icons {
+  color: #F4F5F7;
+  margin-right: 0.3rem;
+}
+.c-list__block .c-list__block__btn--delete {
+  background: #d32f2f;
+}
+.c-list__block .c-list__block__btn--edit {
+  background: #00ACC1;
+}
+
+@media screen and (min-width: 750px) {
+  .c-list__block .c-list__block__item {
+    padding: 1.5rem 0;
+  }
+  .c-list__block .c-list__block__heading {
+    width: 70%;
+  }
+  .c-list__block .c-list__block__content {
+    width: 25%;
+  }
+  .c-list__block .c-list__block__btn {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 749px) {
+  .c-list__block .c-list__block__item {
+    padding: 1rem 0;
+  }
+  .c-list__block .c-list__block__heading {
+    width: 55%;
+  }
+  .c-list__block .c-list__block__content {
+    width: 40%;
+  }
+  .c-list__block .c-list__block__btn {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+}
+.c-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+}
+.c-modal .c-modal__bg {
+  background: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+.c-modal .c-modal__content {
+  background: #F4F5F7;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.c-modal .c-modal__text {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.c-modal .c-modal__btnWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-modal .c-modal__btn {
+  border-radius: 3.5rem;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
+  font-size: 1.3rem;
+  padding: 1rem;
+  width: 30%;
+}
+.c-modal .c-modal__btn + .c-modal__btn {
+  margin-left: 3rem;
+}
+.c-modal .p-modal__btn--cancel {
+  background: #F4F5F7;
+  border: 1px solid #9e9e9e;
+}
+.c-modal .c-modal__btn--delete {
+  color: #F4F5F7;
+  background: #d32f2f;
+}
+
+@media screen and (min-width: 750px) {
+  .c-modal .c-modal__content {
+    padding: 3rem;
+    width: 60%;
+  }
+  .c-modal .c-modal__btn {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .c-modal__content {
+    padding: 4rem;
+    width: 100%;
+    max-width: 50rem;
+  }
+}
+@media screen and (max-width: 749px) {
+  .c-modal .c-modal__content {
+    padding: 2rem;
+    width: 90%;
+  }
+  .c-modal .c-modal__btn {
+    width: 40%;
+  }
+}
 .c-pagination {
   display: flex;
   justify-content: center;

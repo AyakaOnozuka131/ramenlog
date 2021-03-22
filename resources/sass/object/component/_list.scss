@@ -1,0 +1,74 @@
+.c-list__block{
+	.c-list__block__item{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&+.c-list__block__item{
+			border-top: 1px solid $baseBorderColor;
+		}
+	}
+	.c-list__block__heading{
+		font-size: 1.6rem;
+		display: block;
+		line-height: 1.25;
+	}
+	.c-list__block__content{
+		display: flex;
+		justify-content: space-between;
+	}
+	.c-list__block__btn{
+		border-radius: 0.5rem;
+		color: $baseColor;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		line-height: 1;
+		width: 7rem;
+		.material-icons{
+			color: $baseColor;
+			margin-right: 0.3rem;
+		}
+	}
+	.c-list__block__btn--delete{
+		background:$dangerColor;
+	}
+	.c-list__block__btn--edit{
+		background: $editColor;
+	}
+}
+
+@include mq-up {
+	.c-list__block{
+		.c-list__block__item{
+			padding: 1.5rem 0;
+		}
+		.c-list__block__heading{
+			width: 70%;
+		}
+		.c-list__block__content{
+			width: 25%;
+		}
+		.c-list__block__btn{
+			font-size: 1.3rem;
+			padding: 0.5rem;
+		}
+	}
+}
+@include mq-down {
+	.c-list__block{
+		.c-list__block__item{
+			padding: 1rem 0;
+		}
+		.c-list__block__heading{
+			width: 55%;
+		}
+		.c-list__block__content{
+			width: 40%;
+		}
+		.c-list__block__btn{
+			font-size: 1.2rem;
+			padding: 0.3rem;
+		}
+	}
+}

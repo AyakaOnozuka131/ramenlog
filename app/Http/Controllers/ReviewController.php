@@ -79,6 +79,12 @@ class ReviewController extends Controller
         return $meta["uri"];
     }
 
+    public function destroy(Review $review)
+    {
+        $review->delete();
+        return redirect()->route('users.show');
+    }
+
     public function edit(Review $review, Shop $shop)
     {
         $shops = $shop->getShopLists();

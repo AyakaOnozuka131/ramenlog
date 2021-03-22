@@ -123,7 +123,7 @@ class ShopController extends Controller
     public function destroy(Shop $shop)
     {
         $shop->delete();
-        return redirect()->route('shops.index');
+        return redirect()->route('users.show');
     }
 
     public function show(Shop $shop)
