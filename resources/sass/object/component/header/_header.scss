@@ -12,6 +12,9 @@
 	.logo__link{
 		color: $keyColor;
 	}
+	button.c-header__head__item__link{
+		background: $baseColorWhite;
+	}
 	.c-header__item__link--search,
 	.c-header__item__link--review{
 		border-radius: 20px;
@@ -68,7 +71,6 @@
 		.c-header__head__item__link,
 		.c-header__item__link{
 			color: $lightFontColor;
-			background: $baseColor;
 		}
 		.c-header__item__link--search,
 		.c-header__item__link--review{
