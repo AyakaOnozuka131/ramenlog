@@ -99,6 +99,9 @@
 		font-size: 1.2rem;
     position: relative;
     padding: 1rem 1rem 1rem 3rem;
+		@include mq-down {
+			padding: 1rem 1rem 1rem 4.5rem;
+		}
 		.material-icons{
 			position: absolute;
 			top: 50%;

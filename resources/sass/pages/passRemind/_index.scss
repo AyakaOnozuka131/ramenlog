@@ -7,6 +7,11 @@
 		font-size: 1.4rem;
 		margin-bottom: 2rem;
 	}
+	.c-form__item{
+		+.c-form__item{
+			margin-top: 2rem;
+		}
+	}
 	.p-form__btn{
 		max-width: 160px;
 		margin: 2rem auto 0;

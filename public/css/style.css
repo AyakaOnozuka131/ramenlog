@@ -246,7 +246,7 @@ table {
 }
 @media screen and (max-width: 960px) {
   .l-page {
-    padding: 5.6rem 0;
+    padding: 6.5rem 0;
   }
 }
 
@@ -990,7 +990,7 @@ input[type=checkbox]:checked + .c-checkbox:before {
     margin: 2rem auto 0;
   }
 }
-.c-error {
+.c-success {
   color: #0f5132;
   background-color: #d1e7dd;
   border-color: #badbcc;
@@ -1200,6 +1200,7 @@ input[type=checkbox]:checked + .c-checkbox:before {
   .c-header .c-header__head__item__link,
 .c-header .c-header__item__link {
     color: #797e93;
+    background: #F4F5F7;
   }
   .c-header .c-header__item__link--search,
 .c-header .c-header__item__link--review {
@@ -1358,6 +1359,11 @@ input[type=checkbox]:checked + .c-checkbox:before {
   position: relative;
   padding: 1rem 1rem 1rem 3rem;
 }
+@media screen and (max-width: 749px) {
+  .p-sideContent .p-sideItem--profile__link {
+    padding: 1rem 1rem 1rem 4.5rem;
+  }
+}
 .p-sideContent .p-sideItem--profile__link .material-icons {
   position: absolute;
   top: 50%;
@@ -1511,6 +1517,9 @@ input[type=checkbox]:checked + .c-checkbox:before {
   text-align: center;
   font-size: 1.4rem;
   margin-bottom: 2rem;
+}
+.page-pass__remind .c-form__item + .c-form__item {
+  margin-top: 2rem;
 }
 .page-pass__remind .p-form__btn {
   max-width: 160px;

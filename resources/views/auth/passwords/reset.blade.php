@@ -18,11 +18,11 @@
               <input type="hidden" name="email" value="{{ $email }}">
               <input type="hidden" name="token" value="{{ $token }}">
 
-              <label for="password" class="">新しいパスワード</label>
+              <label for="password" class="c-label">新しいパスワード</label>
               <input type="password" name="password" class="c-inputText" required>
             </div>
             <div class="c-form__item">
-                <label for="password" class="">新しいパスワード(再入力)</label>
+                <label for="password" class="c-label">新しいパスワード(再入力)</label>
                 <input type="password" name="password_confirmation" class="c-inputText" required>
             </div>
             <div class="p-form__btn">
