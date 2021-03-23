@@ -17,7 +17,7 @@
               @if (!empty($shop->image_path1))
                 <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image">
               @else
-                <img src="/images/noimage.jpg" alt="image" class="noimage">
+                <img src="/images/noimage_300.png" alt="image" class="noimage">
               @endif
             </div>
             <div class="p-shop__head__content">

@@ -40,7 +40,7 @@
                   </h2>
     
                   <div class="c-list__block__content">
-                    <button class="c-list__block__btn c-list__block__btn--delete" type="button" @click="modalId = '@json($review->id)'">
+                    <button class="c-list__block__btn c-list__block__btn--delete" type="button" @click="reviewmModalId = '@json($review->id)'">
                       <span class="material-icons">delete</span>
                       削除
                     </button>
@@ -50,7 +50,7 @@
                     </a>
                   </div>
   
-                  <div class="c-modal" v-show="modalId === '@json($review->id)'">
+                  <div class="c-modal" v-show="reviewmModalId === '@json($review->id)'">
                     <div class="c-modal__bg"></div>
                     <form action="{{ route('review.destroy',['review'=>$review]) }}" method="post">
                       @csrf
@@ -58,7 +58,7 @@
                       <div class="c-modal__content">
                         <p class="c-modal__text">{{ $review->title }}を削除します。よろしいですか？</p>
                         <div class="c-modal__btnWrap">
-                          <button type="button" class="c-modal__btn c-modal__btn--cancel" @click="closeModal">キャンセル</button>
+                          <button type="button" class="c-modal__btn c-modal__btn--cancel" @click="reviewCloseModal">キャンセル</button>
                           <button type="submit" class="c-modal__btn c-modal__btn--delete">削除する</button>
                         </div>
                       </div>
@@ -72,36 +72,41 @@
   
           <div class="c-profileArchive">
             <div class="c-secondary__heading">登録したお店</div>
-            <div class="l-cardWrap">
-              @foreach($registShops as $registShop)
-                <article class="c-card">
-                  <a href="{{ route('shops.show',['shop'=>$registShop]) }}" class="c-card__link">
-                    <div class="l-card__imgWrap">
-                      <div class="c-card__img">
-                        @if (!empty($registShop->image_path1))
-                          <img src="/storage/shopImages/{{ $registShop->image_path1 }}" alt="image">
-                        @else
-                          <img src="/images/noimage.jpg" alt="image" class="noimage">
-                        @endif
+              <ul class="c-list__block">
+                @foreach($registShops as $registShop)
+                <li class="c-list__block__item">
+                  <h2 class="c-list__block__heading">
+                    {{ $registShop->name }}
+                  </h2>
+    
+                  <div class="c-list__block__content">
+                    <button class="c-list__block__btn c-list__block__btn--delete" type="button" @click="shopModalId = '@json($registShop->id)'">
+                      <span class="material-icons">delete</span>
+                      削除
+                    </button>
+                    <a href="{{ route('shops.show',['shop'=>$registShop]) }}" class="c-list__block__btn c-list__block__btn--edit">
+                      <span class="material-icons">edit</span>
+                      編集
+                    </a>
+                  </div>
+
+                  <div class="c-modal" v-show="shopModalId === '@json($registShop->id)'">
+                    <div class="c-modal__bg"></div>
+                    <form action="{{ route('review.destroy',['review'=>$review]) }}" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <div class="c-modal__content">
+                        <p class="c-modal__text">{{ $registShop->name }}を削除します。よろしいですか？</p>
+                        <div class="c-modal__btnWrap">
+                          <button type="button" class="c-modal__btn c-modal__btn--cancel" @click="shopCloseModal">キャンセル</button>
+                          <button type="submit" class="c-modal__btn c-modal__btn--delete">削除する</button>
+                        </div>
                       </div>
-                    </div>
-                    <div class="c-card__content">
-                      <h3 class="c-card__title">{{ $registShop->name }}</h3>
-                      <p class="c-card__text">{{ $registShop->explanation }}</p>
-                      <div class="c-card__catWrap">
-                        <p class="c-card__cat">
-                          @foreach($categories as $id => $name)
-                            @if($registShop->category_id == $id)
-                            {{ $name }}
-                            @endif
-                          @endforeach
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </article>
+                    </form>
+                  </div>
+                </li>
                 @endforeach
-            </div>
+              </ul>
           </div>
           
           <div class="c-profileArchive">

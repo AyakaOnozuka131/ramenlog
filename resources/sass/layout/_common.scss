@@ -97,7 +97,7 @@
 }
 .l-profileContent{
   @include mq-up(md) {
-    width: 72.5%;
+    width: 70.5%;
   }
 }
 
@@ -106,7 +106,7 @@
 ------------------------------ */
 .l-side {
   @include mq-up(md) {
-    width: 22.5%;
+    width: 24.5%;
   }
   @include mq-down(md) {
     margin-bottom: 3rem;

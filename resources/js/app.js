@@ -10,7 +10,8 @@ const app = new Vue({
     tab: 1,
     preview: null,
     showContent: false,
-    modalId: 1,
+    reviewModalId: 1,
+    shopModalId: 1,
   },
   methods: {
     drawer: function () {
@@ -31,8 +32,11 @@ const app = new Vue({
       }
       reader.readAsDataURL(event.target.files[0])
     },
-    closeModal: function(){
-      this.modalId = 0;
+    reviewCloseModal: function(){
+      this.reviewModalId = 0;
+    },
+    shopCloseModal: function(){
+      this.shopModalId = 0;
     },
   },
   components: {
