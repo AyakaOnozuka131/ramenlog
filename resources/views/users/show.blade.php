@@ -76,7 +76,9 @@
                 @foreach($registShops as $registShop)
                 <li class="c-list__block__item">
                   <h2 class="c-list__block__heading">
-                    {{ $registShop->name }}
+                    <a href="{{ route('shops.show',['shop'=>$registShop]) }}">
+                      {{ $registShop->name }}
+                    </a>
                   </h2>
     
                   <div class="c-list__block__content">
