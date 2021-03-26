@@ -2,6 +2,14 @@
   <ul class="p-sideContent">
     <li class="p-sideItem p-sideItem--profile">
       <div class="p-sideItem--profile__box">
+        <a href="{{ route('users.show') }}" class="p-sideItem--profile__link">
+          <span class="material-icons">account_box</span>
+          マイページ
+        </a>
+      </div>
+    </li>
+    <li class="p-sideItem p-sideItem--profile">
+      <div class="p-sideItem--profile__box">
         <a href="{{ route('shops.create') }}" class="p-sideItem--profile__link">
           <span class="material-icons">store</span>
           ラーメン屋を登録する
