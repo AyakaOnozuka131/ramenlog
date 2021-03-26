@@ -94,7 +94,7 @@
                     <p class="page-regist__text">画像</p>
                     <label>
                       <div class="c-img__areaDrop">
-                        <input type="file" name="image_path1" class="c-img__inputFile" accept="image/*" @change="onFileChange">
+                        <input type="file" name="image_path1" id="image_path" class="c-img__inputFile" accept="image/*" @change="onFileChange">
                         <div v-if="preview">
                           <img class="c-img__prevImg" :src="preview">
                         </div>
