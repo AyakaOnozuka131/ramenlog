@@ -14,7 +14,7 @@
 Auth::routes(); 
 
 // top
-Route::get('/', 'topController@index');
+Route::get('/', 'TopController@index');
 
 // auth
 Route::get('/deactive', 'Auth\DeactiveController@showDeactiveForm')->name('deactive.form');
