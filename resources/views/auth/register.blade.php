@@ -26,11 +26,11 @@
               <input type="email" name="email" id="email" value="{{ old('email') }}" class="c-inputText" required>
             </div>
             <div class="c-form__item">
-              <label for="password" class="">パスワード</label>
+              <label for="password" class="c-label">パスワード</label>
               <input type="password" name="password" class="c-inputText" required>
             </div>
             <div class="c-form__item">
-              <label for="password_confirmation" class="">パスワード（確認）</label>
+              <label for="password_confirmation" class="c-label">パスワード（確認）</label>
               <input type="password" name="password_confirmation" class="c-inputText" required>
             </div>
           </div>

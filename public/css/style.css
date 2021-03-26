@@ -574,6 +574,7 @@ table {
   border: none;
   border: 1px solid #9e9e9e;
   border-radius: 5px;
+  padding: 1rem;
 }
 
 /* ------------------------------
@@ -1611,7 +1612,7 @@ input[type=checkbox]:checked + .c-checkbox:before {
 - page-searchArea
 ------------------------------ */
 .page-searchArea {
-  background: url(../../../public/images/top/bg_top_serch.png) no-repeat center center/cover;
+  background: url(../images/top/bg_top_serch.png) no-repeat center center/cover;
 }
 .page-searchArea .page-searchArea__heading {
   text-align: center;

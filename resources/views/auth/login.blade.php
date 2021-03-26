@@ -22,7 +22,7 @@
               <input type="email" name="email" id="email" value="{{ old('email') }}" class="c-inputText" required>
             </div>
             <div class="c-form__item">
-              <label for="password" class="">パスワード</label>
+              <label for="password" class="c-label">パスワード</label>
               <input type="password" name="password" class="c-inputText" required>
             </div>
             <div class="c-form__item">
