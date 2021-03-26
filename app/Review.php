@@ -13,9 +13,6 @@ class Review extends Model
         'score',
         'title',
         'contents',
-        'image_path1',
-        'image_path2',
-        'image_path3'
     ];
 
     public function user(): BelongsTo

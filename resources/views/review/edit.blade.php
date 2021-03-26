@@ -68,37 +68,17 @@
                     <p class="page-regist__text">画像1</p>
                     <label>
                       <div class="c-img__areaDrop">
-                      <input type="file" name="image_path1" class="c-img__inputFile">
+                        <input type="file" name="image_path1" id="image_path1" class="c-img__inputFile" accept="image/*" @change="onFileChange">
                         @if (!empty($review->image_path1))
-                          <img src="/storage/reviewImages/{{ $review->image_path1 }}" alt="image" class="c-img__prevImg" accept="image/*" @change="onFileChange">
-                          <div v-if="preview">
-                            <img class="c-img__prevImg" :src="preview">
+                          <div v-if="preview1">
+                            <img class="c-img__prevImg" :src="preview1">
+                          </div>
+                          <div v-else>
+                            <img src="{{ $review->image_path1 }}" alt="image" class="c-img__prevImg">
                           </div>
                         @else
-                        <div v-if="preview">
-                          <img class="c-img__prevImg" :src="preview">
-                        </div>
-                        <div v-else>
-                          <img class="c-img__prevImg">
-                          ドラッグ＆ドロップ<br>または<br>クリック
-                        </div>
-                      @endif
-                      </div>
-                    </label>
-                  </div>
-                  <div class="page-regist__item__rowBlock">
-                    <p class="page-regist__text">画像1</p>
-                    <label>
-                      <div class="c-img__areaDrop">
-                        <input type="file" name="image_path2" class="c-img__inputFile">
-                        @if (!empty($review->image_path1))
-                          <img src="/storage/reviewImages/{{ $review->image_path2 }}" alt="image" class="c-img__prevImg" accept="image/*" @change="onFileChange">
-                          <div v-if="preview">
-                            <img class="c-img__prevImg" :src="preview">
-                          </div>
-                        @else
-                          <div v-if="preview">
-                            <img class="c-img__prevImg" :src="preview">
+                          <div v-if="preview1">
+                            <img class="c-img__prevImg" :src="preview1">
                           </div>
                           <div v-else>
                             <img class="c-img__prevImg">
@@ -109,24 +89,50 @@
                     </label>
                   </div>
                   <div class="page-regist__item__rowBlock">
-                    <p class="page-regist__text">画像1</p>
+                    <p class="page-regist__text">画像2</p>
                     <label>
                       <div class="c-img__areaDrop">
-                      <input type="file" name="image_path3" class="c-img__inputFile">
-                        @if (!empty($review->image_path1))
-                          <img src="/storage/reviewImages/{{ $review->image_path3 }}" alt="image" class="c-img__prevImg" accept="image/*" @change="onFileChange">
-                          <div v-if="preview">
-                            <img class="c-img__prevImg" :src="preview">
+                        <input type="file" name="image_path2" id="image_path2" class="c-img__inputFile" accept="image/*" @change="onFileChange">
+                        @if (!empty($review->image_path2))
+                          <div v-if="preview2">
+                            <img class="c-img__prevImg" :src="preview2">
+                          </div>
+                          <div v-else>
+                            <img src="{{ $review->image_path2 }}" alt="image" class="c-img__prevImg">
                           </div>
                         @else
-                          <div v-if="preview">
-                            <img class="c-img__prevImg" :src="preview">
+                          <div v-if="preview2">
+                            <img class="c-img__prevImg" :src="preview2">
                           </div>
                           <div v-else>
                             <img class="c-img__prevImg">
                             ドラッグ＆ドロップ<br>または<br>クリック
                           </div>
                         @endif
+                      </div>
+                    </label>
+                  </div>
+                  <div class="page-regist__item__rowBlock">
+                    <p class="page-regist__text">画像3</p>
+                    <label>
+                      <div class="c-img__areaDrop">
+                      <input type="file" name="image_path3" id="image_path3" class="c-img__inputFile" accept="image/*" @change="onFileChange">
+                      @if (!empty($review->image_path3))
+                      <div v-if="preview3">
+                        <img class="c-img__prevImg" :src="preview3">
+                      </div>
+                      <div v-else>
+                        <img src="{{ $review->image_path3 }}" alt="image" class="c-img__prevImg">
+                      </div>
+                    @else
+                      <div v-if="preview3">
+                        <img class="c-img__prevImg" :src="preview3">
+                      </div>
+                      <div v-else>
+                        <img class="c-img__prevImg">
+                        ドラッグ＆ドロップ<br>または<br>クリック
+                      </div>
+                    @endif
                       </div>
                     </label>
                   </div>
@@ -151,3 +157,4 @@
 </main>
 
 
+@endsection
