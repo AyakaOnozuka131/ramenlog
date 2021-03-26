@@ -105,7 +105,7 @@
                           <img class="c-img__prevImg" :src="preview">
                         </div>
                         @if (!empty($shop->image_path1))
-                          <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image" class="c-img__prevImg">
+                          <img src="{{ $shop->image_path1 }}" alt="image" class="c-img__prevImg">
                         @else
                           <div v-if="preview">
                             <img class="c-img__prevImg" :src="preview">
@@ -129,26 +129,7 @@
           
         </div>
   
-        <aside class="l-side">
-          <ul class="p-sideContent">
-            <li class="p-sideItem p-sideItem--profile">
-              <div class="p-sideItem--profile__box">
-                <a href="" class="p-sideItem--profile__link">
-                  <span class="material-icons">store</span>
-                  ラーメン屋を登録する
-                </a>
-              </div>
-            </li>
-            <li class="p-sideItem p-sideItem--profile">
-              <div class="p-sideItem--profile__box">
-                <a href="" class="p-sideItem--profile__link">
-                  <span class="material-icons">vpn_key</span>
-                  パスワード変更
-                </a>
-              </div>
-            </li>
-          </ul>
-        </aside>
+        @include('common.sidebar')
         
       </div>
   

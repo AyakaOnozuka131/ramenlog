@@ -25,7 +25,6 @@ class Shop extends Model
         'parking_map2',
         'facility',
         'other',
-        'image_path1'
     ];
 
     public function user(): BelongsTo

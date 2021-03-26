@@ -55,8 +55,15 @@ class ShopController extends Controller
 
     public function store(ShopRequest $request , Shop $shops)
     {
+        $file = $request->file('image_path1');
+        $fileName = $file->getClientOriginalName();
+        $extension = $file->getClientOriginalExtension();
+        $image = Image::make($file)->fit(320, 226)->encode($extension);
+        $path = Storage::disk('s3')->put('/shop/'.$fileName , (string)$image , 'public');
+
+
         if($request->has('image_path1')){
-            $fileName = $this->saveAvatar($request->file('image_path1'));
+            $fileName = Storage::disk('s3')->url('shop/'.$fileName);
         }else{
             $fileName = '';
         }
@@ -79,46 +86,22 @@ class ShopController extends Controller
     public function update(ShopRequest $request , Shop $shop)
     {
         $file = $request->file('image_path1');
-
+        
         if( !is_null( $file ) ){
-            $fileName = $this->saveAvatar($request->file('image_path1'));
-            $shop->image_path1 = $fileName;
+            $fileName = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $image = Image::make($file)->fit(320, 226)->encode($extension);
+            $path = Storage::disk('s3')->put('/shop/'.$fileName , (string)$image , 'public');
+            $shop->image_path1 = Storage::disk('s3')->url('shop/'.$fileName);
         }
         $shop->fill($request->all());
         $shop->categories()->detach();
         $categories = $request->category_id;
         $shop->categories()->attach($categories);
         $shop->save();
-        return redirect()->route('shops.index');
+        return redirect()->route('users.show');
     }
 
-     /**
-      * 画像をリサイズして保存します
-      *
-      * @param UploadedFile $file アップロードされた画像
-      * @return string ファイル名
-      */
-
-    private function saveAvatar(UploadedFile $file): string
-    {
-        $tempPath = $this->makeTempPath(); //一時ファイルを生成してパスを取得する
-        Image::make($file)->fit(320, 226)->save($tempPath); //Intervention Imageを使用して、画像をリサイズ後、一時ファイルに保存。
-        $filePath = Storage::disk('public')->putFile('shopImages', new File($tempPath)); //Storageファサードを使用して画像をディスクに保存
-        return basename($filePath); //パスの最後にある名前の部分を返す
-    }
-
-    /**
-     * 一時的なファイルを生成してパスを返します。
-    *
-    * @return string ファイルパス
-    */
-
-    private function makeTempPath(): string
-     {
-        $tmp_fp = tmpfile();
-        $meta   = stream_get_meta_data($tmp_fp);
-        return $meta["uri"];
-     }
 
     public function destroy(Shop $shop)
     {

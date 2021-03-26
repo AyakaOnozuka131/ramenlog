@@ -22,7 +22,7 @@
                   <div class="l-card__imgWrap">
                     <div class="c-card__img">
                       @if (!empty($shop->image_path1))
-                        <img src="/storage/shopImages/{{ $shop->image_path1 }}" alt="image">
+                        <img src="{{ $shop->image_path1 }}" alt="image">
                       @else
                         <img src="/images/noimage.jpg" alt="image" class="noimage">
                       @endif
