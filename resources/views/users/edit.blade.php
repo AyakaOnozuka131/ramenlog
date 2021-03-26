@@ -25,7 +25,7 @@
                 <p class="page-profileChange__text">プロフィール画像</p>
                 <label>
                   <div class="c-img__areaDrop">
-                  <input type="file" class="c-img__inputFile" name="avatar" accept="image/*" @change="onFileChange">
+                  <input type="file" id="image_path" class="c-img__inputFile" name="avatar" accept="image/*" @change="onFileChange">
                     @if (!empty($user->avatar))
                       <img src="{{ $user->avatar }}" alt="" class="c-img__prevImg">
                       <div v-if="preview">
