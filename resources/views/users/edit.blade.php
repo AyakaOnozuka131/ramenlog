@@ -27,7 +27,7 @@
                   <div class="c-img__areaDrop">
                   <input type="file" class="c-img__inputFile" name="avatar" accept="image/*" @change="onFileChange">
                     @if (!empty($user->avatar))
-                      <img src="/storage/userImages/{{ $user->avatar }}" alt="" class="c-img__prevImg">
+                      <img src="{{ $user->avatar }}" alt="" class="c-img__prevImg">
                       <div v-if="preview">
                         <img class="c-img__prevImg" :src="preview">
                       </div>

@@ -18,7 +18,7 @@
           <div class="c-profile">
             <div class="c-profile__img">
               @if (!empty($user->avatar))
-                <img src="/storage/userImages/{{ $user->avatar }}" alt="image" class="">
+                <img src="{{ $user->avatar }}" alt="image" class="">
               @else
                 <img src="/images/noimage.jpg" alt="image" class="noimage">
               @endif
@@ -84,7 +84,7 @@
                       <span class="material-icons">delete</span>
                       削除
                     </button>
-                    <a href="{{ route('shops.show',['shop'=>$registShop]) }}" class="c-list__block__btn c-list__block__btn--edit">
+                    <a href="{{ route('shops.edit',['shop'=>$registShop]) }}" class="c-list__block__btn c-list__block__btn--edit">
                       <span class="material-icons">edit</span>
                       編集
                     </a>
@@ -92,7 +92,7 @@
 
                   <div class="c-modal" v-show="shopModalId === '@json($registShop->id)'">
                     <div class="c-modal__bg"></div>
-                    <form action="{{ route('review.destroy',['review'=>$review]) }}" method="post">
+                    <form action="{{ route('shops.destroy',['shop'=>$registShop]) }}" method="post">
                       @csrf
                       @method('DELETE')
                       <div class="c-modal__content">

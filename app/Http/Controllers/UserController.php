@@ -50,8 +50,12 @@ class UserController extends Controller
         $file = $request->file('avatar');
 
         if( !is_null( $file ) ){
-            $fileName = $this->saveAvatar($request->file('avatar'));
-            $user->avatar = $fileName;
+            $fileName = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $image = Image::make($file)->fit(300, 300)->encode($extension);
+            $path = Storage::disk('s3')->put('/avater/'.$fileName , (string)$image , 'public');
+    
+            $user->avatar = Storage::disk('s3')->url('avater/'.$fileName);
         }
 
         $user->fill($request->all());
@@ -59,32 +63,5 @@ class UserController extends Controller
         return redirect()->route('users.show');
     }
 
-    /**
-      * アバター画像をリサイズして保存します
-      *
-      * @param UploadedFile $file アップロードされたアバター画像
-      * @return string ファイル名
-      */
-
-      private function saveAvatar(UploadedFile $file): string
-      {
-          $tempPath = $this->makeTempPath(); //一時ファイルを生成してパスを取得する
-          Image::make($file)->fit(300, 300)->save($tempPath); //Intervention Imageを使用して、画像をリサイズ後、一時ファイルに保存。
-          $filePath = Storage::disk('public')->putFile('userImages', new File($tempPath)); //Storageファサードを使用して画像をディスクに保存
-          return basename($filePath); //パスの最後にある名前の部分を返す
-      }
-  
-      /**
-       * 一時的なファイルを生成してパスを返します。
-      *
-      * @return string ファイルパス
-      */
-  
-      private function makeTempPath(): string
-       {
-          $tmp_fp = tmpfile();
-          $meta   = stream_get_meta_data($tmp_fp);
-          return $meta["uri"];
-       }
 
 }
