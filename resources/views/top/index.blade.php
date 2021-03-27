@@ -41,7 +41,7 @@
 
         @foreach ($shops as $shop)
           <article class="c-card">
-            <a href="{{ route('shops.show',['shop'=>$shop]) }}" target="_blank" rel="noopener noreferrer" class="c-card__link">
+            <a href="{{ route('shops.show',['shop'=>$shop]) }}" class="c-card__link">
               <div class="l-card__imgWrap">
                 <div class="c-card__img">
                   @if (!empty($shop->image_path1))
