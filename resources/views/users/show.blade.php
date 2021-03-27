@@ -40,7 +40,7 @@
                   </h2>
     
                   <div class="c-list__block__content">
-                    <button class="c-list__block__btn c-list__block__btn--delete" type="button" @click="reviewmModalId = '@json($review->id)'">
+                    <button class="c-list__block__btn c-list__block__btn--delete" type="button" @click="reviewModalId = '@json($review->id)'">
                       <span class="material-icons">delete</span>
                       削除
                     </button>
@@ -50,7 +50,7 @@
                     </a>
                   </div>
   
-                  <div class="c-modal" v-show="reviewmModalId === '@json($review->id)'">
+                  <div class="c-modal" v-show="reviewModalId === '@json($review->id)'">
                     <div class="c-modal__bg"></div>
                     <form action="{{ route('review.destroy',['review'=>$review]) }}" method="post">
                       @csrf
