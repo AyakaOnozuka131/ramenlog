@@ -54,7 +54,7 @@
               <div class="c-card__content">
                 <h3 class="c-card__title">{{ $shop->name }}</h3>
                 <p class="c-card__text">
-                  {{ $shop->explanation }}
+                  {!! nl2br(e(Str::limit($shop->explanation, 38))) !!}
                 </p>
                 <div class="c-card__catWrap">
                   <p class="c-card__cat">
