@@ -111,7 +111,7 @@
                 <tr class="c-table__block">
                   <th class="c-table__head">駐車場 GOOGLE MAP</th>
                   <td class="c-table__content">
-                    {{ $shop->parking_map }} 
+                    {!! $shop->parking_map !!} 
                   </td>
                 </tr>
                 <tr class="c-table__block">
@@ -123,7 +123,7 @@
                 <tr class="c-table__block">
                   <th class="c-table__head">駐車場（周辺） <br>GOOGLE MAP</th>
                   <td class="c-table__content">
-                    {{ $shop->parking_map2 }} 
+                    {!! $shop->parking_map2 !!}
                   </td>
                 </tr>
                 <tr class="c-table__block">
