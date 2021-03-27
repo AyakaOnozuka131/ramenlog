@@ -28,9 +28,9 @@ class ReviewRequest extends FormRequest
             'score' => 'required',
             'title' => 'required|max:255',
             'contents' => 'required|max:1000',
-            'image_path1' => 'file|mimes:jpeg,bmp,png|max:2048',
-            'image_path2' => 'file|mimes:jpeg,bmp,png|max:2048',
-            'image_path3' => 'file|mimes:jpeg,bmp,png|max:2048'
+            'image_path1' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'image_path2' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'image_path3' => 'file|mimes:jpeg,bmp,png|max:5000'
         ];
     }
 

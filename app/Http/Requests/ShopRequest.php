@@ -39,7 +39,7 @@ class ShopRequest extends FormRequest
             'parking_map2' => 'max:500',
             'facility' => 'required|max:255',
             'other' => 'required|max:255',
-            'image_path1' => 'file|mimes:jpeg,bmp,png|max:2048',
+            'image_path1' => 'file|mimes:jpeg,bmp,png|max:5000',
         ];
     }
 
