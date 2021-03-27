@@ -126,7 +126,7 @@
               </li>
             </ul>
             <div class="p-form__btn">
-              <button type="submit" class="c-primary__btn">登録する</button>
+              <button type="submit" class="c-primary__btn">更新する</button>
             </div>
           </form>
   

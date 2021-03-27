@@ -111,7 +111,7 @@
               </li>
             </ul>
             <div class="p-form__btn">
-              <button type="submit" class="c-primary__btn" value="">更新する</button>
+              <button type="submit" class="c-primary__btn" value="">投稿する</button>
             </div>
           </form>
   
