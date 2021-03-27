@@ -76,6 +76,7 @@
               <li class="page-regist__item">
                 <p class="page-regist__text">駐車場 GOOGLE MAP</p>
                 <input type="text" name="parking_map" id="" value="{{ $shop->parking_map ?? old('parking_map') }}" class="c-inputText">
+                <small class="page-regist__text__sub">※googleマップを開いて、場所の検索後、「共有」→「地図を埋め込む」→「HTMLをコピー」→貼り付けを行ってください。</small>
               </li>
               <li class="page-regist__item">
                 <p class="page-regist__text">駐車場（周辺）
@@ -85,6 +86,7 @@
               <li class="page-regist__item">
                 <p class="page-regist__text">駐車場（周辺） GOOGLE MAP</p>
                 <input type="text" name="parking_map2" id="" value="{{ $shop->parking_map2 ?? old('parking_map2') }}" class="c-inputText">
+                <small class="page-regist__text__sub">※googleマップを開いて、場所の検索後、「共有」→「地図を埋め込む」→「HTMLをコピー」→貼り付けを行ってください。</small>
               </li>
               <li class="page-regist__item">
                 <p class="page-regist__text">設備</p>

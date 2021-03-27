@@ -508,6 +508,7 @@ table {
   right: 1rem;
 }
 .c-selectBox select {
+  font-size: 1.6rem;
   padding: 1rem;
   width: 100%;
   border-radius: 5px;
@@ -574,6 +575,7 @@ table {
   border: none;
   border: 1px solid #9e9e9e;
   border-radius: 5px;
+  font-size: 1.6rem;
   padding: 1rem;
 }
 
@@ -1578,6 +1580,10 @@ input[type=checkbox]:checked + .c-checkbox:before {
   margin-bottom: 1rem;
   border-bottom: 2px solid #f4810b;
 }
+.page-regist .page-regist__text__sub {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
 .page-regist .p-form__btn {
   max-width: 160px;
   margin: 3rem auto 0;
@@ -2040,12 +2046,27 @@ input[type=checkbox]:checked + .c-checkbox:before {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.c-table .c-table__head,
-.c-table .c-table__content {
-  padding: 1.5rem;
+.c-table .c-table__head {
+  vertical-align: top;
+}
+.c-table .c-table__map {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+.c-table .c-table__map iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 750px) {
+  .c-table .c-table__head,
+.c-table .c-table__content {
+    padding: 1.5rem;
+  }
   .c-table .c-table__head {
     font-size: 1.4rem;
     width: 20rem;
@@ -2059,6 +2080,10 @@ input[type=checkbox]:checked + .c-checkbox:before {
   }
 }
 @media screen and (max-width: 749px) {
+  .c-table .c-table__head,
+.c-table .c-table__content {
+    padding: 1rem;
+  }
   .c-table .c-table__head {
     font-size: 1.3rem;
     width: 12rem;

@@ -111,7 +111,9 @@
                 <tr class="c-table__block">
                   <th class="c-table__head">駐車場 GOOGLE MAP</th>
                   <td class="c-table__content">
-                    {!! $shop->parking_map !!} 
+                    <div class="c-table__map">
+                      {!! $shop->parking_map !!} 
+                    </div>
                   </td>
                 </tr>
                 <tr class="c-table__block">
@@ -123,7 +125,9 @@
                 <tr class="c-table__block">
                   <th class="c-table__head">駐車場（周辺） <br>GOOGLE MAP</th>
                   <td class="c-table__content">
-                    {!! $shop->parking_map2 !!}
+                    <div class="c-table__map">
+                      {!! $shop->parking_map2 !!}
+                    </div>
                   </td>
                 </tr>
                 <tr class="c-table__block">
@@ -148,7 +152,7 @@
               <div class="c-review__head">
                 <div class="c-review__userIcon">
                   @if (!empty($user->avatar))
-                    <img src="/storage/userImages/{{ $user->avatar }}" alt="image" class="">
+                    <img src="{{ $user->avatar }}" alt="image" class="">
                   @endif
                 </div>
                 <div class="c-review__head__content">
@@ -169,17 +173,17 @@
                 <div class="c-review__photo">
                   <div class="c-review__photo__img">
                     @if (!empty($review->image_path1))
-                    <img src="/storage/reviewImages/{{ $review->image_path1 }}" alt="image">
+                    <img src="{{ $review->image_path1 }}" alt="image">
                     @endif
                   </div>
                   <div class="c-review__photo__img">
                     @if (!empty($review->image_path2))
-                    <img src="/storage/reviewImages/{{ $review->image_path2 }}" alt="image">
+                    <img src="{{ $review->image_path2 }}" alt="image">
                     @endif
                   </div>
                   <div class="c-review__photo__img">
                     @if (!empty($review->image_path3))
-                    <img src="/storage/reviewImages/{{ $review->image_path3 }}" alt="image">
+                    <img src="{{ $review->image_path3 }}" alt="image">
                     @endif
                   </div>
                 </div>

@@ -233,13 +233,19 @@
 	width: 100%;
   border-collapse: collapse;
 	border-spacing: 0;
-	.c-table__head,
-	.c-table__content{
-		padding: 1.5rem;
+	.c-table__head{
+		vertical-align: top;
+	}
+	.c-table__map{
+		@include responsiveIframe(100%, 56.25%);
 	}
 }
 @include mq-up {
 	.c-table{
+		.c-table__head,
+		.c-table__content{
+			padding: 1.5rem;
+		}
 		.c-table__head{
 			font-size: 1.4rem;
 			width: 20rem;
@@ -255,6 +261,10 @@
 }
 @include mq-down {
 	.c-table{
+		.c-table__head,
+		.c-table__content{
+			padding: 1rem;
+		}
 		.c-table__head{
 			font-size: 1.3rem;
 			width: 12rem;
