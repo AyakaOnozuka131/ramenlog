@@ -27,7 +27,7 @@
                 </h2>
               </div>
               <p class="p-shop__head__text">
-                {{ $shop->explanation }}
+                {!! nl2br($shop->explanation) !!}
               </p>
 
               <shop-like
@@ -63,7 +63,7 @@
                 <tr class="c-table__block">
                   <th class="c-table__head">お店の説明</th>
                   <td class="c-table__content">
-                    {{ $shop->explanation }}
+                    {!! nl2br($shop->explanation) !!}
                   </td>
                 </tr>
                 <tr class="c-table__block">
@@ -125,9 +125,11 @@
                 <tr class="c-table__block">
                   <th class="c-table__head">駐車場（周辺） <br>GOOGLE MAP</th>
                   <td class="c-table__content">
+                    @if(!empty($shop->parking_map2))
                     <div class="c-table__map">
                       {!! $shop->parking_map2 !!}
                     </div>
+                    @endif
                   </td>
                 </tr>
                 <tr class="c-table__block">
@@ -168,7 +170,7 @@
               </div>
               <div class="c-review__body">
                 <p class="c-review__text">
-                  {{ $review->contents }}
+                  {!! nl2br( $review->contents ) !!}
                 </p>
                 <div class="c-review__photo">
                   <div class="c-review__photo__img">
