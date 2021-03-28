@@ -18,7 +18,7 @@ use Intervention\Image\Facades\Image;
 class ShopController extends Controller
 {
     public function index(Request $request, Category $category){
-        $categories = $category->getLists();
+        $categories = $category->getLists()->prepend('選択', '');
         $category_id = $request->category_id;
         $query = Shop::query();
 
