@@ -92,7 +92,7 @@
           <div class="c-searchContent">
             <h2 class="c-secondary__heading">好みで探す</h2>
             <ul class="c-searchContent__list">
-              @foreach($categories as $id => $name)
+              @foreach($footCategories as $id => $name)
               <li class="c-searchContent__item">
                 <a href="{{ route('shops.index', 'category_id='.$id ) }}" class="c-searchContent__link">{{ $name }}</a>
               </li>
